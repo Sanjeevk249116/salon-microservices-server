@@ -19,6 +19,7 @@ public class Salon {
     private String name;
     private List<String> images;
     private String address;
+    private String city;
     private String phoneNumber;
     private String email;
 

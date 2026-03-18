@@ -8,4 +8,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface SalonService {
     Salon createNewSalon(@Valid SalonDto newSalonData);
+
+    Salon updateSalon(SalonDto updateSalonData, Long salonId);
 }

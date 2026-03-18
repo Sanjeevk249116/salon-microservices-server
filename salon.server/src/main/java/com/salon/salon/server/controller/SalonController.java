@@ -7,10 +7,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -23,6 +20,12 @@ public class SalonController {
     public ResponseEntity<Salon> createSalon(@RequestBody @Valid SalonDto newSalonData) {
         Salon newSalon = salonService.createNewSalon(newSalonData);
         return ResponseEntity.status(HttpStatus.CREATED).body(newSalon);
+    }
+
+    @PutMapping("/update-salon/{salonId}")
+    public ResponseEntity<Salon> updateSalonDetail(@RequestBody SalonDto updateSalonData, @PathVariable Long salonId){
+        Salon updatedSalon =salonService.updateSalon(updateSalonData,salonId);
+        return ResponseEntity.status(200).body(updatedSalon);
     }
 
 

@@ -28,4 +28,45 @@ public class SalonServiceImplementation implements SalonService {
         newSalon.setId(null);
         return salonRepository.save(newSalon);
     }
+
+    @Override
+    public Salon updateSalon(SalonDto updateSalonData, Long salonId) {
+
+        Salon existingSalon = salonRepository.findById(salonId)
+                .orElseThrow(() -> new CustomException("Salon not found with id: " + salonId));
+
+        if (updateSalonData.getName() != null) {
+            existingSalon.setName(updateSalonData.getName());
+        }
+
+        if (updateSalonData.getImages() != null) {
+            existingSalon.setImages(updateSalonData.getImages());
+        }
+
+        if (updateSalonData.getAddress() != null) {
+            existingSalon.setAddress(updateSalonData.getAddress());
+        }
+
+        if (updateSalonData.getPhoneNumber() != null) {
+            existingSalon.setPhoneNumber(updateSalonData.getPhoneNumber());
+        }
+
+        if (updateSalonData.getEmail() != null) {
+            existingSalon.setEmail(updateSalonData.getEmail());
+        }
+
+        if (updateSalonData.getOwnerId() != null) {
+            existingSalon.setOwnerId(updateSalonData.getOwnerId());
+        }
+
+        if (updateSalonData.getOpenTime() != null) {
+            existingSalon.setOpenTime(updateSalonData.getOpenTime());
+        }
+
+        if (updateSalonData.getCloseTime() != null) {
+            existingSalon.setCloseTime(updateSalonData.getCloseTime());
+        }
+
+        return salonRepository.save(existingSalon);
+    }
 }

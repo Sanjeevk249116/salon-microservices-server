@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fb96ca4-2e26-4456-9743-b5c6f9a7c2ec" name="Changes" comment="create micsroservices for salon.">
-      <change afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/config/ModelMapperFn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/dto/SalonDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/entity/Salon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/repository/SalonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/service/SalonService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/service/salonImpl/SalonServiceImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/salon.server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/controller/SalonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/controller/SalonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/globalExceptionHandler/GlobalExceptionErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/globalExceptionHandler/GlobalExceptionErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/dto/SalonDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/dto/SalonDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/entity/Salon.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/entity/Salon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/repository/SalonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/repository/SalonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/service/SalonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/service/SalonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/service/salonImpl/SalonServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/service/salonImpl/SalonServiceImplementation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,5 +172,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create micsroservices for salon." />
     <option name="LAST_COMMIT_MESSAGE" value="create micsroservices for salon." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/service/salonImpl/SalonServiceImplementation.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

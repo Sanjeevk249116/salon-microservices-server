@@ -13,23 +13,21 @@ import java.util.List;
 @Data
 public class SalonDto {
 
-    @Column(nullable = false,unique = true)
     @NotBlank(message = "name is required")
     private String name;
 
-    @Column(nullable = false)
     @ElementCollection
     private List<String> images;
 
-    @Column(nullable = false)
     @NotBlank(message = "Address is required")
     private String address;
 
-    @Column(nullable = false,unique = true)
+    @NotBlank(message = "city is required")
+    private String city;
+
     @NotBlank(message = "phoneNumber is required")
     private String phoneNumber;
 
-    @Column(nullable = false)
     @NotBlank(message = "email is required")
     @Email(message = "valid email is required.")
     private String email;
