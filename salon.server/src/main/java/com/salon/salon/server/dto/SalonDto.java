@@ -32,9 +32,6 @@ public class SalonDto {
     @Email(message = "valid email is required.")
     private String email;
 
-    @NotNull(message = "ownerId is required")
-    private Long ownerId;
-
     @NotNull(message = "openTime is required")
     private LocalTime openTime;
 

@@ -8,7 +8,7 @@ import com.salon.salon.server.service.SalonService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,21 +19,27 @@ public class SalonServiceImplementation implements SalonService {
     private final ModelMapper modelMapper;
 
     @Override
-    public Salon createNewSalon(SalonDto newSalonData) {
+    public Salon createNewSalon(SalonDto newSalonData, Long userId) {
         Optional<Salon> existingSalonWithName = salonRepository.findByNameIgnoreCase(newSalonData.getName());
         if (existingSalonWithName.isPresent()) {
             throw new CustomException("Salon name is already added.");
         }
+
         Salon newSalon = modelMapper.map(newSalonData, Salon.class);
         newSalon.setId(null);
+        newSalon.setOwnerId(userId);
         return salonRepository.save(newSalon);
     }
 
     @Override
-    public Salon updateSalon(SalonDto updateSalonData, Long salonId) {
+    public Salon updateSalon(SalonDto updateSalonData, Long salonId, Long ownerId) {
 
         Salon existingSalon = salonRepository.findById(salonId)
                 .orElseThrow(() -> new CustomException("Salon not found with id: " + salonId));
+
+        if (!existingSalon.getOwnerId().equals(ownerId)) {
+            throw new CustomException("You are not allow to perform this action");
+        }
 
         if (updateSalonData.getName() != null) {
             existingSalon.setName(updateSalonData.getName());
@@ -55,10 +61,6 @@ public class SalonServiceImplementation implements SalonService {
             existingSalon.setEmail(updateSalonData.getEmail());
         }
 
-        if (updateSalonData.getOwnerId() != null) {
-            existingSalon.setOwnerId(updateSalonData.getOwnerId());
-        }
-
         if (updateSalonData.getOpenTime() != null) {
             existingSalon.setOpenTime(updateSalonData.getOpenTime());
         }
@@ -68,5 +70,30 @@ public class SalonServiceImplementation implements SalonService {
         }
 
         return salonRepository.save(existingSalon);
+    }
+
+    @Override
+    public List<Salon> getAllSalonList() {
+        return salonRepository.findAll();
+    }
+
+    @Override
+    public Salon readSingleSalonById(Long salonId) {
+        return salonRepository.findById(salonId).orElseThrow(() -> new CustomException("Salon not found"));
+
+    }
+
+    @Override
+    public String deleteSalonAccount(Long salonId, Long id) {
+        Salon salon = salonRepository.findById(salonId).orElseThrow(() -> new CustomException("Salon not found to delete"));
+        if (!salon.getOwnerId().equals(id)) {
+            throw new CustomException("You are not allow to delete");
+        }
+        return "Account delete successfully.";
+    }
+
+    @Override
+    public List<Salon> searchSalon(String keyword) {
+        return salonRepository.searchSalons(keyword);
     }
 }

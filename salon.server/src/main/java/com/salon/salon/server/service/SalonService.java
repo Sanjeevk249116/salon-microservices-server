@@ -5,9 +5,19 @@ import com.salon.salon.server.entity.Salon;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface SalonService {
-    Salon createNewSalon(@Valid SalonDto newSalonData);
+    Salon createNewSalon(@Valid SalonDto newSalonData, Long userId);
 
-    Salon updateSalon(SalonDto updateSalonData, Long salonId);
+    Salon updateSalon(SalonDto updateSalonData, Long salonId,Long ownerId);
+
+    List<Salon> getAllSalonList();
+
+    Salon readSingleSalonById(Long salonId);
+
+    String deleteSalonAccount(Long salonId, Long id);
+
+    List<Salon> searchSalon(String keyword);
 }
