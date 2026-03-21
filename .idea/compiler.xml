@@ -12,7 +12,7 @@
         <module name="user-server" />
         <module name="salon.server" />
       </profile>
-      <profile name="Annotation profile for service-offering-server" enabled="true">
+      <profile name="Annotation profile for booking-service-server" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -21,11 +21,13 @@
         </processorPath>
         <module name="category-server" />
         <module name="service-offering-server" />
+        <module name="booking-service-server" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="booking-service-server" options="-parameters" />
       <module name="category-server" options="-parameters" />
       <module name="salon.server" options="-parameters" />
       <module name="service-offering-server" options="-parameters" />

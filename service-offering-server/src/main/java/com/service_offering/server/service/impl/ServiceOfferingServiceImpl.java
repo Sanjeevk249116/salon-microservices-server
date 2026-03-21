@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -76,7 +77,7 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
     }
 
     @Override
-    public Set<ServiceOfferingResponseDto> readAllServiceOfferBySalon(Long salonId) {
-        return serviceOfferingRepository.findBySalonId(salonId).stream().map(item->modelMapper.map(item,ServiceOfferingResponseDto.class)).collect(Collectors.toSet());
+    public List<ServiceOfferingResponseDto> readAllServiceOfferBySalon(Long salonId) {
+        return serviceOfferingRepository.findBySalonId(salonId).stream().map(item->modelMapper.map(item,ServiceOfferingResponseDto.class)).toList();
     }
 }

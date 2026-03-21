@@ -5,6 +5,7 @@ import com.service_offering.server.dto.ServiceOfferingResponseDto;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -17,5 +18,5 @@ public interface ServiceOfferingService {
 
     ServiceOfferingResponseDto getSingleServiceOffer(Long serviceOfferingId);
 
-    Set<ServiceOfferingResponseDto> readAllServiceOfferBySalon(Long salonId);
+    List<ServiceOfferingResponseDto> readAllServiceOfferBySalon(Long salonId);
 }

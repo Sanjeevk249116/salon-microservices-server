@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -31,8 +32,8 @@ public class ServiceOfferController {
     }
 
     @GetMapping("/read/all-service-offer-by-salonId/{salonId}")
-    public ResponseEntity<Set<ServiceOfferingResponseDto>> readAllServiceOfferBySalon(@PathVariable Long salonId) {
-        Set<ServiceOfferingResponseDto> readAllServiceBySalon = serviceOfferingService.readAllServiceOfferBySalon(salonId);
+    public ResponseEntity<List<ServiceOfferingResponseDto>> readAllServiceOfferBySalon(@PathVariable Long salonId) {
+        List<ServiceOfferingResponseDto> readAllServiceBySalon = serviceOfferingService.readAllServiceOfferBySalon(salonId);
         return ResponseEntity.ok(readAllServiceBySalon);
     }
 
