@@ -1,10 +1,7 @@
 package com.booking.booking.server.entity;
 
 import com.booking.booking.server.domain.BookingStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -20,10 +17,12 @@ public class BookingService {
 
     private Long salonId;
     private Long customerId;
-    private LocalDate startTime;
-    private LocalDate endTime;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
     private BookingStatus bookingStatus = BookingStatus.PENDING;
+
+    @ElementCollection
     private Set<Long> servicesIds;
-    private int totalServices;
+    private int totalPrice;
 
 }

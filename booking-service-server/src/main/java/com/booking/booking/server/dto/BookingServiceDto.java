@@ -9,7 +9,6 @@ import java.util.Set;
 
 @Data
 public class BookingServiceDto {
-    private LocalDate startTime;
-    private LocalDate endTime;
+    private LocalDateTime startTime;
     private Set<Long> servicesIds;
 }

@@ -80,6 +80,16 @@ public class GlobalExceptionErrorHandler {
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(NullPointerException.class)
+    public ResponseEntity<Map<String, Object>> nullPointerExceptionHandle(NullPointerException ex) {
+        Map<String, Object> error = new HashMap<>();
+        error.put("statusCode", 400);
+        error.put("status", false);
+        error.put("message", ex.getMessage());
+        error.put("data", null);
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<Map<String, Object>> notReadableExpection(HttpMessageNotReadableException ex) {
         Map<String, Object> error = new HashMap<>();

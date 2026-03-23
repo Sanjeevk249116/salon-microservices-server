@@ -1,5 +1,6 @@
 package com.booking.booking.server.service;
 
+import com.booking.booking.server.domain.BookingStatus;
 import com.booking.booking.server.dto.*;
 import com.booking.booking.server.entity.BookingService;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public interface BookingServices {
 
     BookingService readSingleBookingByBookingId(Long bookingId);
 
-    BookingService updateSingleBookingServiceStatusByBookingId(Long bookingId, BookingServiceDto updateBookingStatus);
+    BookingService updateSingleBookingServiceStatusByBookingId(Long bookingId, BookingStatus updateBookingStatus);
 
     List<BookingService> RealAllBookingServiceByDate(Long salonId, LocalDate date);
 
