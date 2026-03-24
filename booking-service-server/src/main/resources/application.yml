@@ -1,6 +1,6 @@
 spring:
   application:
-    name: booking-service-server
+    name: BOOKING-SERVICE-SERVER
 
   devtools:
     livereload:

@@ -1,7 +1,7 @@
 package com.booking.booking.server.globalExceptionHandler;
 
 import com.booking.booking.server.payloadResponseStructure.ApiResponse;
-import org.jspecify.annotations.Nullable;
+import jakarta.annotation.Nullable;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

@@ -14,7 +14,7 @@ stripe:
 
 spring:
   application:
-    name: payment-server
+    name: PAYMENT-SERVER
 
   devtools:
     livereload:

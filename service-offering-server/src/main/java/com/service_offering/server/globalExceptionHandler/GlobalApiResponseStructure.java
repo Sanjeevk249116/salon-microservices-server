@@ -1,7 +1,8 @@
 package com.service_offering.server.globalExceptionHandler;
 
 import com.service_offering.server.payloadResponseStructure.ApiResponse;
-import org.jspecify.annotations.Nullable;
+
+import jakarta.annotation.Nullable;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
