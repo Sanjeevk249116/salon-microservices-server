@@ -5,86 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df81e6e5-d098-46c2-9984-86d4ee128666" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/config/ModelMapperFn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/controller/SalonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/dto/SalonDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/dto/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/entity/Salon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/globalExceptionHandler/CustomException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/globalExceptionHandler/GlobalApiResponseStructure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/globalExceptionHandler/GlobalExceptionErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/payloadResponseStructure/ApiResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/repository/SalonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/service/SalonService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/service/salonImpl/SalonServiceImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/config/ModelMapperFn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/dto/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/exceptionHandling/CustomException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/exceptionHandling/GlobalApiResponseStructure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/exceptionHandling/GlobalExceptionErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/payloadResponse/ApiResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/service/impl/UserImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booking-service-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/controller/BookingServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/controller/BookingServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/globalExceptionHandler/GlobalApiResponseStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/globalExceptionHandler/GlobalApiResponseStructure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/category-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-micro-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-micro-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/globalExceptionHandler/GlobalApiResponseStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/globalExceptionHandler/GlobalApiResponseStructure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/SalonServerApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/config/ModelMapperFn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/controller/SalonController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/dto/SalonDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/dto/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/entity/Salon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/globalExceptionHandler/CustomException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/globalExceptionHandler/GlobalApiResponseStructure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/globalExceptionHandler/GlobalExceptionErrorHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/payloadResponseStructure/ApiResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/repository/SalonRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/service/SalonService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/java/com/salon/salon/server/service/salonImpl/SalonServiceImplementation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon.server/src/test/java/com/salon/salon/server/ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/salon-micro-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/salon-micro-server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-offering-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/globalExceptionHandler/GlobalApiResponseStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/globalExceptionHandler/GlobalApiResponseStructure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/salon/Salon_server/UserServerApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/salon/Salon_server/config/ModelMapperFn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/salon/Salon_server/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/salon/Salon_server/dto/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/salon/Salon_server/entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/salon/Salon_server/exceptionHandling/CustomException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/salon/Salon_server/exceptionHandling/GlobalApiResponseStructure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/salon/Salon_server/exceptionHandling/GlobalExceptionErrorHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/salon/Salon_server/payloadResponse/ApiResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/salon/Salon_server/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/salon/Salon_server/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/java/com/salon/Salon_server/service/impl/UserImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-server/src/test/java/com/salon/Salon_server/SalonServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-micro-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +43,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.BookingServiceServerApplication.executor": "Run",
     "Spring Boot.CategoryServerApplication.executor": "Run",
