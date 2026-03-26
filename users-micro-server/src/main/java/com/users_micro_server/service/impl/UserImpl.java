@@ -9,6 +9,7 @@ import com.users_micro_server.repository.UserRepository;
 import com.users_micro_server.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -49,7 +50,7 @@ public class UserImpl implements UserService {
     public User getUserProfileById(Long userId) {
         Optional<User> user = userRepository.findById(userId);
         if (user.isEmpty()){
-            throw new CustomException("Profile is not found.");
+            throw new CustomException("Profile is not found.",400);
         }
 
         return user.get();
