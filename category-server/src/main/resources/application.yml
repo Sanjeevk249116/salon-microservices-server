@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: CATEGORY-SERVER
+
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+      exclude: static/**, public/**, templates/**
+
+  mvc:
+    throw-exception-if-no-handler-found: true
+
+  web:
+    resources:
+      add-mappings: false
+
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/category_server
+    username: root
+    password: ${DB_PASSWORD:Sanjeev@99}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 5003
+  error:
+    include-stacktrace: never
+    include-message: never
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8060/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+  instance:
+    prefer-ip-address: true
