@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/auth-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/booking-service-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/category-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway-micro-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/payment-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/salon-micro-server/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/salon.server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-offering-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/users-micro-server/src/main/java" charset="UTF-8" />
   </component>

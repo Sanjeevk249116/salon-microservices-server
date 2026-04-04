@@ -1,6 +1,6 @@
 services:
   eurekaserver:
-    image: "sanjeevksuhwaha/salon-eureka-server:v1"
+    image: "sanjeevksuhwaha/salon-eureka-server:v2"
     container_name: eurekaserver
     ports:
       - "8060:8060"
@@ -232,8 +232,41 @@ services:
       - sanjeevkushwaha
 
 
+  authserver:
+    image: "sanjeevksuhwaha/auth-server-service:v1"
+    container_name: authserver
+    ports:
+      - "5008:5008"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: AUTH-SERVER
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/auth_server?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true"
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Sanjeev@99
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQL8Dialect
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_DEVTOOLS_RESTART_ENABLED: "false"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8060/eureka/"
+      MYSQL_HOST: mysql
+      JAVA_OPTS: "-Xms512m -Xmx1024m"
+    healthcheck:
+      test: [ "CMD-SHELL", "curl --fail --silent http://localhost:5008/actuator/health | grep UP || exit 1" ]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - sanjeevkushwaha
+
+
   salongatewayserver:
-    image: "sanjeevksuhwaha/salon-gateway-server:v1"
+    image: "sanjeevksuhwaha/salon-gateway-server:v2"
     container_name: salongatewayserver
     ports:
       - "5000:5000"

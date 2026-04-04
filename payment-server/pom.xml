@@ -8,8 +8,8 @@
 		<version>3.5.12</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.user-server</groupId>
-	<artifactId>users-micro-server</artifactId>
+	<groupId>com.payment.server</groupId>
+	<artifactId>payment-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>
