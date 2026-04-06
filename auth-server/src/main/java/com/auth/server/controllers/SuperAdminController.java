@@ -1,4 +1,4 @@
-package com.auth_server.controller;
+package com.auth.server.controllers;
 
 
 import com.auth.server.dto.request.UpdateRoleRequest;

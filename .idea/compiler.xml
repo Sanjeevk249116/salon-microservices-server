@@ -10,7 +10,7 @@
         <module name="eureka-server" />
         <module name="gateway-micro-service" />
       </profile>
-      <profile name="Annotation profile for users-micro-server" enabled="true">
+      <profile name="Annotation profile for salon-micro-server" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
