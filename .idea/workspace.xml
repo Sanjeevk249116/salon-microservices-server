@@ -5,35 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df81e6e5-d098-46c2-9984-86d4ee128666" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/controllers/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/controllers/SuperAdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/entity/RefreshToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/entity/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/entity/UserAuth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/enums/RoleEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/security/CustomerUserDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/security/CustomerUserDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/utils/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/microservices-salon-server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-micro-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-micro-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-micro-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-micro-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-micro-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/salon-micro-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-micro-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/impl/RefreshTokenImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/impl/RefreshTokenImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/utils/JwtUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +71,7 @@
       <recent name="C:\Users\Sanjeev Kushwaha\OneDrive\Desktop\learningJava\microservices-salon-server\salon-micro-server\src\main\java\com\salon_micro_server" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SalonMicroServerApplication">
+  <component name="RunManager" selected="Spring Boot.AuthServerApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="microservices-salon-server" />
       <method v="2">
@@ -155,13 +129,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CategoryServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="category-server" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.category.server.CategoryServerApplication" />
+      <module name="eureka-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.eureka.server.EurekaServerApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.category.server.*" />
+          <option name="PATTERN" value="com.eureka.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -199,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.AuthServerApplication" />
+        <item itemvalue="Spring Boot.EurekaServerApplication" />
         <item itemvalue="Spring Boot.SalonMicroServerApplication" />
         <item itemvalue="Spring Boot.ServiceOfferingServerApplication" />
-        <item itemvalue="Spring Boot.AuthServerApplication" />
         <item itemvalue="Spring Boot.BookingServiceServerApplication" />
-        <item itemvalue="Spring Boot.CategoryServerApplication" />
       </list>
     </recent_temporary>
   </component>

@@ -1,5 +1,6 @@
 package com.auth.server.utils;
 
+import com.auth.server.entity.UserAuth;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
@@ -53,6 +54,16 @@ public class JwtUtils {
         claims.put("roles", roles);
         claims.put("userId", userId);
         return buildToken(claims, userDetails);
+
+    }
+
+    public String generateRefreshToken(UserAuth user,Long refreshTokenExpiration) {
+        return Jwts.builder()
+                .subject(user.getEmail())
+                .issuedAt(new Date(System.currentTimeMillis()))
+                .expiration(new Date(System.currentTimeMillis() + refreshTokenExpiration))
+                .signWith(getSignatureKey())
+                .compact();
 
     }
 
