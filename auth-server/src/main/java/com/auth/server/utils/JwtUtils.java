@@ -3,6 +3,7 @@ package com.auth.server.utils;
 import com.auth.server.entity.UserAuth;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.Data;
@@ -62,7 +63,7 @@ public class JwtUtils {
                 .subject(user.getEmail())
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + refreshTokenExpiration))
-                .signWith(getSignatureKey())
+                .signWith(getSignatureKey(), SignatureAlgorithm.HS512)
                 .compact();
 
     }

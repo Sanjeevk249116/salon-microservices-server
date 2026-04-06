@@ -42,4 +42,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
-
+jwt:
+  secret: bXktc2VjcmV0LWtleS0xMjM0NTY3ODkwMTIzNDU2o4387qry87m7x748y7q7y0a898w8adwe87ny7ze9ya37ty97ew
+  access-token-expiration: 900000
+  refresh-token-expiration: 604800000

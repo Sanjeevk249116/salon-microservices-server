@@ -1,17 +1,14 @@
-package com.auth.server.config;
+package com.users_micro_server.config;
 
-import com.auth.server.config.JwtAuthenticationFilter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -26,8 +23,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    private final JwtAuthenticationFilter jwtAuthenticationFilter;
-    private final AuthenticationProvider authenticationProvider;
     private final ObjectMapper objectMapper;
 
     @Bean
@@ -35,16 +30,13 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/auth/user/**").permitAll()
-                        .requestMatchers("/api/v1/admin/**").hasAnyRole("ADMIN","SUPERADMIN")
-                        .requestMatchers("/api/v1/owner/**").hasAnyRole("OWNER", "ADMIN", "SUPERADMIN")
-                        .requestMatchers("/api/v2/admin/**").hasRole("SUPERADMIN")
-                        .anyRequest().authenticated()
-                )
+                .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
+                        .requestMatchers("/api/user/admin/**").hasAnyRole("SUPERADMIN", "ADMIN")
+                        .anyRequest().authenticated())
                 .sessionManagement(sessionManagement -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                .oauth2ResourceServer(oauth2 -> oauth2
+                        .jwt(jwt -> jwt.jwtAuthenticationConverter(new JwtAuthConverter()))
+                )
                 .exceptionHandling(exceptionError -> exceptionError
 
                         .authenticationEntryPoint((request, response, authException) -> {
@@ -64,8 +56,11 @@ public class SecurityConfig {
                             map.put("message", "Access Denied. You are not authorized to access this resource.");
                             objectMapper.writeValue(response.getWriter(), map);
                         })
+
                 );
+
         return http.build();
+
     }
 
     @Bean
@@ -86,6 +81,6 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/api/**", configuration);
         return source;
     }
-
-
 }
+
+
