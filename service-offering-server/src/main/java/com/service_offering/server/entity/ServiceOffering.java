@@ -1,9 +1,6 @@
 package com.service_offering.server.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -21,9 +18,16 @@ public class ServiceOffering {
     private String description;
     private int price;
     private int duration;
+
+    @Column(nullable = false)
     private Long salonId;
+
+    @Column(nullable = false)
     private Long categoryId;
+
+    @Column(nullable = false)
     private Long ownerId;
+
     private String serviceOfferImage;
 
     @CreationTimestamp

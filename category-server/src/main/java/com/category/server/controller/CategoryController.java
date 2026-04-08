@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +20,8 @@ public class CategoryController {
 
     private final CategoryService categoryService;
 
-    @PostMapping("/create-category")
+    @PostMapping("/owner/create-category")
+    @PreAuthorize("hasRole('OWNER')")
     public ResponseEntity<CategoryResponseDto> createNewCategory(@RequestBody @Valid CategoryRequestDto newCategoryData) {
         SalonDto salon = new SalonDto();
         salon.setId(1L);
@@ -41,7 +43,8 @@ public class CategoryController {
         return ResponseEntity.ok(categoryResponse);
     }
 
-    @PutMapping("/update/{categoryId}")
+    @PutMapping("/owner/update/{categoryId}")
+    @PreAuthorize("hasRole('OWNER')")
     public ResponseEntity<CategoryResponseDto> updateCategory(@RequestBody @Valid CategoryRequestDto newCategoryData,@PathVariable Long categoryId) {
         SalonDto salon = new SalonDto();
         salon.setId(1L);
@@ -49,7 +52,8 @@ public class CategoryController {
         return ResponseEntity.status(200).body(newCategory);
     }
 
-    @DeleteMapping("/delete/{categoryId}")
+    @DeleteMapping("/owner/delete/{categoryId}")
+    @PreAuthorize("hasRole('OWNER')")
     public ResponseEntity<String> deleteCategory(@PathVariable Long categoryId) {
         SalonDto salon = new SalonDto();
         salon.setId(1L);

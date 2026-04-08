@@ -16,41 +16,45 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar" />
         </processorPath>
-        <module name="salon-micro-server" />
-        <module name="payment-server" />
         <module name="booking-service-server" />
+        <module name="payment-server" />
         <module name="category-server" />
+        <module name="users-micro-server" />
         <module name="service-offering-server" />
+        <module name="salon-micro-server" />
       </profile>
-      <profile name="Annotation profile for users-micro-server" enabled="true">
+      <profile name="Annotation profile for Auth-server" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" />
         </processorPath>
-        <module name="users-micro-server" />
+        <module name="auth-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="salon-micro-server (1)" target="17" />
       <module name="salon-server" target="21" />
+      <module name="users-micro-server (1)" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auth-server" options="-parameters" />
       <module name="booking-service-server" options="-parameters" />
       <module name="category-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="gateway-micro-service" options="-parameters" />
       <module name="payment-server" options="-parameters" />
       <module name="salon-micro-server" options="-parameters" />
+      <module name="salon-micro-server (1)" options="-parameters" />
       <module name="salon-server" options="-parameters" />
       <module name="service-offering-server" options="-parameters" />
       <module name="users-micro-server" options="-parameters" />
+      <module name="users-micro-server (1)" options="-parameters" />
     </option>
   </component>
 </project>

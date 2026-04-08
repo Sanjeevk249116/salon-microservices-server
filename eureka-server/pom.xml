@@ -66,7 +66,7 @@
 				<version>3.5.1</version>
 				<configuration>
 					<to>
-						<image>sanjeevksuhwaha/salon-eureka-server:v1</image>
+						<image>sanjeevksuhwaha/salon-eureka-server:v3</image>
 					</to>
 				</configuration>
 			</plugin>

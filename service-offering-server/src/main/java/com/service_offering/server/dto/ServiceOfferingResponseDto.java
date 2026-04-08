@@ -15,6 +15,7 @@ public class ServiceOfferingResponseDto {
     private int duration;
     private Long salonId;
     private Long categoryId;
+    private Long ownerId;
     private String serviceOfferImage;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

@@ -9,6 +9,8 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,18 +24,14 @@ public class SalonController {
     private final SalonService salonService;
 
     @PostMapping("/create-new-salon")
-    public ResponseEntity<Salon> createSalon(@RequestBody @Valid SalonDto newSalonData) throws Exception {
-        UserDto userDto = new UserDto();
-        userDto.setId(1L);
-        Salon newSalon = salonService.createNewSalon(newSalonData, userDto.getId());
+    public ResponseEntity<Salon> createSalon(@RequestBody @Valid SalonDto newSalonData, @AuthenticationPrincipal Jwt jwt) throws Exception {
+        Salon newSalon = salonService.createNewSalon(newSalonData, jwt.getClaim("userId"));
         return ResponseEntity.status(HttpStatus.CREATED).body(newSalon);
     }
 
-    @PutMapping("/update-salon/{salonId}")
-    public ResponseEntity<Salon> updateSalonDetail(@RequestBody SalonDto updateSalonData, @PathVariable Long salonId) {
-        UserDto userDto = new UserDto();
-        userDto.setId(1L);
-        Salon updatedSalon = salonService.updateSalon(updateSalonData, salonId, userDto.getId());
+    @PutMapping("/owner/update-salon/{salonId}")
+    public ResponseEntity<Salon> updateSalonDetail(@RequestBody SalonDto updateSalonData, @PathVariable Long salonId,@AuthenticationPrincipal Jwt jwt) throws Exception {
+        Salon updatedSalon = salonService.updateSalon(updateSalonData, salonId, jwt.getClaim("userId"));
         return ResponseEntity.status(200).body(updatedSalon);
     }
 
@@ -49,11 +47,9 @@ public class SalonController {
         return ResponseEntity.ok(salon);
     }
 
-    @DeleteMapping("/delete-salon/{salonId}")
-    public ResponseEntity<String> deleteSalonAccount(@PathVariable Long salonId) {
-        UserDto userDto = new UserDto();
-        userDto.setId(1L);
-        String str = salonService.deleteSalonAccount(salonId, userDto.getId());
+    @DeleteMapping("/owner/delete-salon/{salonId}")
+    public ResponseEntity<String> deleteSalonAccount(@PathVariable Long salonId,@AuthenticationPrincipal Jwt jwt) throws Exception {
+        String str = salonService.deleteSalonAccount(salonId, jwt.getClaim("userId"));
         return ResponseEntity.ok(str);
     }
 
