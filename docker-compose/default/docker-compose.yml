@@ -1,6 +1,6 @@
 services:
   eurekaserver:
-    image: "sanjeevksuhwaha/salon-eureka-server:v2"
+    image: "sanjeevksuhwaha/salon-eureka-server:v3"
     container_name: eurekaserver
     ports:
       - "8060:8060"
@@ -37,7 +37,7 @@ services:
       - sanjeevkushwaha
 
   usermicroserver:
-    image: "sanjeevksuhwaha/salon-user-service:v2"
+    image: "sanjeevksuhwaha/salon-user-service:v3"
     container_name: usermicroserver
     ports:
       - "5001:5001"
@@ -68,7 +68,7 @@ services:
       - sanjeevkushwaha
 
   salonmicroservice:
-    image: "sanjeevksuhwaha/salon-service:v2"
+    image: "sanjeevksuhwaha/salon-service:v3"
     container_name: salonmicroservice
     ports:
       - "5002:5002"
@@ -101,7 +101,7 @@ services:
 
 
   salonofferservice:
-    image: "sanjeevksuhwaha/salon-service-offering:v1"
+    image: "sanjeevksuhwaha/salon-service-offering:v3"
     container_name: salonofferservice
     ports:
       - "5004:5004"
@@ -134,7 +134,7 @@ services:
 
 
   salonbookingservice:
-    image: "sanjeevksuhwaha/salon-booking-service:v1"
+    image: "sanjeevksuhwaha/salon-booking-service:v3"
     container_name: salonbookingservice
     ports:
       - "5005:5005"
@@ -167,7 +167,7 @@ services:
 
 
   saloncategoryservice:
-    image: "sanjeevksuhwaha/salon-category-service:v1"
+    image: "sanjeevksuhwaha/salon-category-service:v3"
     container_name: saloncategoryservice
     ports:
       - "5003:5003"
@@ -200,7 +200,7 @@ services:
 
 
   salonpaymentservice:
-    image: "sanjeevksuhwaha/salon-payment-service:v1"
+    image: "sanjeevksuhwaha/salon-payment-service:v3"
     container_name: salonpaymentservice
     ports:
       - "5006:5006"
@@ -233,7 +233,7 @@ services:
 
 
   authserver:
-    image: "sanjeevksuhwaha/auth-server-service:v1"
+    image: "sanjeevksuhwaha/auth-server-service:v3"
     container_name: authserver
     ports:
       - "5008:5008"
@@ -266,7 +266,7 @@ services:
 
 
   salongatewayserver:
-    image: "sanjeevksuhwaha/salon-gateway-server:v2"
+    image: "sanjeevksuhwaha/salon-gateway-server:v3"
     container_name: salongatewayserver
     ports:
       - "5000:5000"

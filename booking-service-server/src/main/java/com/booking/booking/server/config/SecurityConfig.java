@@ -1,7 +1,7 @@
-package com.users_micro_server.config;
+package com.booking.booking.server.config;
 
+import com.booking.booking.server.globalExceptionHandler.UserNotFoundException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.users_micro_server.exceptionHandling.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -113,9 +113,9 @@ public class SecurityConfig {
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of(
-                "http://localhost:3000",
-                "http://localhost:4200",
-                "https://yourdomain.com"
+                "http://localhost:3000",  // React dev
+                "http://localhost:4200",  // Angular dev
+                "https://yourdomain.com" // Production frontend
         ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-Requested-With"));

@@ -28,6 +28,8 @@ public class UserAuth {
     @Column(nullable = false, name = "last_name")
     private String lastName;
 
+    @Column(unique = true, nullable = false, name = "phone_number")
+    private String phoneNumber;
 
     private boolean enabled = true;
 

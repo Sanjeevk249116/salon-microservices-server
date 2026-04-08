@@ -11,6 +11,7 @@ import com.users_micro_server.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.List;
@@ -37,14 +38,14 @@ public class UserImpl implements UserService {
     }
 
     @Override
-    public User createUserProfile(UserDto newUser, Set<RoleEnum> role) {
+    @Transactional
+    public UserResponseDto createUserProfile(UserDto newUser, Set<RoleEnum> role) {
         if (userRepository.existsByEmail(newUser.getEmail())) {
             throw new CustomException("Email already exists in user profile.", 401);
         }
         User user = modelMapper.map(newUser, User.class);
-
         user.setRole(role);
-        return userRepository.save(user);
+        return modelMapper.map(userRepository.save(user), UserResponseDto.class);
     }
 
     @Override

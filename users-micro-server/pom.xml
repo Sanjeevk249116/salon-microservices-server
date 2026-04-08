@@ -148,7 +148,7 @@
                 <version>3.5.1</version>
                 <configuration>
                     <to>
-                        <image>sanjeevksuhwaha/salon-user-service:v2</image>
+                        <image>sanjeevksuhwaha/salon-user-service:v3</image>
                     </to>
                 </configuration>
             </plugin>

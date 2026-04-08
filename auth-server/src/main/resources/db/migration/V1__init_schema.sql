@@ -45,7 +45,7 @@ CREATE TABLE refresh_tokens
 ) ENGINE=InnoDB;
 
 
-INSERT INTO roles (role_name) VALUES ('OWNER');
-INSERT INTO roles (role_name) VALUES ('ADMIN');
-INSERT INTO roles (role_name) VALUES ('USER');
-INSERT INTO roles (role_name) VALUES ('SUPERADMIN');
+INSERT INTO roles (role_name) VALUES ('ROLE_OWNER');
+INSERT INTO roles (role_name) VALUES ('ROLE_ADMIN');
+INSERT INTO roles (role_name) VALUES ('ROLE_USER');
+INSERT INTO roles (role_name) VALUES ('ROLE_SUPERADMIN');

@@ -146,7 +146,7 @@
                 <version>3.5.1</version>
                 <configuration>
                     <to>
-                        <image>sanjeevksuhwaha/salon-service-offering:v1</image>
+                        <image>sanjeevksuhwaha/salon-service:v3</image>
                     </to>
                 </configuration>
             </plugin>

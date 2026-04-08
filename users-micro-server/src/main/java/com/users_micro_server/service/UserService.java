@@ -13,7 +13,7 @@ import java.util.Set;
 public interface UserService {
     UserResponseDto getUserProfile(String Email);
 
-    User createUserProfile(UserDto newUser, Set<RoleEnum> role);
+    UserResponseDto createUserProfile(UserDto newUser, Set<RoleEnum> role);
 
     List<User> getAllUserList();
 

@@ -27,7 +27,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/create")
-    public ResponseEntity<User> createUserProfile(@RequestBody @Valid UserDto newUser, @AuthenticationPrincipal Jwt jwt) {
+    public ResponseEntity<UserResponseDto> createUserProfile(@RequestBody @Valid UserDto newUser, @AuthenticationPrincipal Jwt jwt) {
         List<String> rolesList = jwt.getClaim("roles");
 
         Set<String> roles = new HashSet<>(rolesList);
@@ -35,7 +35,7 @@ public class UserController {
         Set<RoleEnum> roleEnums = roles.stream()
                 .map(RoleEnum::valueOf)
                 .collect(Collectors.toSet());
-        User user = userService.createUserProfile(newUser, roleEnums);
+        UserResponseDto user = userService.createUserProfile(newUser, roleEnums);
         return ResponseEntity.status(201).body(user);
     }
 

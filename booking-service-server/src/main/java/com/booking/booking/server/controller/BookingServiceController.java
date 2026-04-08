@@ -7,6 +7,9 @@ import com.booking.booking.server.service.BookingServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -22,10 +25,9 @@ public class BookingServiceController {
 
     private final BookingServices bookingService;
 
-    @PostMapping("/create-new")
-    public ResponseEntity<BookingService> createNewServiceBooking(@RequestParam Long salonId, @RequestBody BookingServiceDto newBookingServiceData) {
-        UserDto user = new UserDto();
-        user.setId(1L);
+    @PostMapping("/owner/create-new")
+    @PreAuthorize("hasRole('OWNER')")
+    public ResponseEntity<BookingService> createNewServiceBooking(@RequestParam Long salonId, @RequestBody BookingServiceDto newBookingServiceData, @AuthenticationPrincipal Jwt jwt) {
         SalonDto salon = new SalonDto();
         salon.setId(salonId);
         salon.setOpenTime(LocalTime.now());
@@ -42,11 +44,12 @@ public class BookingServiceController {
 
         serviceDtoSet.add(serviceDto);
 
-        BookingService createdService = bookingService.createNewBookingService(newBookingServiceData, user, salon, serviceDtoSet);
+        BookingService createdService = bookingService.createNewBookingService(newBookingServiceData, jwt.getClaim("userId"), salon, serviceDtoSet);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdService);
     }
 
-    @GetMapping("/read/list-customer")
+    @GetMapping("/owner/read/list-customer")
+    @PreAuthorize("hasRole('OWNER')")
     public ResponseEntity<List<BookingService>> getBookingByCustomer() {
         UserDto user = new UserDto();
         user.setId(1L);
@@ -66,7 +69,8 @@ public class BookingServiceController {
         return ResponseEntity.ok(readSingleBooking);
     }
 
-    @PutMapping("/update/single-booking/{bookingId}")
+    @PutMapping("/owner/update/single-booking/{bookingId}")
+    @PreAuthorize("hasRole('OWNER')")
     public ResponseEntity<BookingService> updateSingleBookingById(@PathVariable Long bookingId, @RequestBody BookingStatus updateBookingStatus) {
         BookingService updatedBookingService = bookingService.updateSingleBookingServiceStatusByBookingId(bookingId, updateBookingStatus);
         return ResponseEntity.ok(updatedBookingService);
@@ -78,7 +82,8 @@ public class BookingServiceController {
         return ResponseEntity.ok(readAllSalonByDate);
     }
 
-    @GetMapping("/read/salon-report/{salonId}")
+    @GetMapping("/owner/read/salon-report/{salonId}")
+    @PreAuthorize("hasRole('OWNER')")
     public ResponseEntity<SalonReport> readSalonReport(@PathVariable Long salonId) {
         SalonReport salonReport = bookingService.readSalonReport(salonId);
         return ResponseEntity.ok(salonReport);

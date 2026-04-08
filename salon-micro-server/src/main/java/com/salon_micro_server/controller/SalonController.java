@@ -30,10 +30,8 @@ public class SalonController {
     }
 
     @PutMapping("/owner/update-salon/{salonId}")
-    public ResponseEntity<Salon> updateSalonDetail(@RequestBody SalonDto updateSalonData, @PathVariable Long salonId) {
-        UserDto userDto = new UserDto();
-        userDto.setId(1L);
-        Salon updatedSalon = salonService.updateSalon(updateSalonData, salonId, userDto.getId());
+    public ResponseEntity<Salon> updateSalonDetail(@RequestBody SalonDto updateSalonData, @PathVariable Long salonId,@AuthenticationPrincipal Jwt jwt) throws Exception {
+        Salon updatedSalon = salonService.updateSalon(updateSalonData, salonId, jwt.getClaim("userId"));
         return ResponseEntity.status(200).body(updatedSalon);
     }
 
@@ -50,10 +48,8 @@ public class SalonController {
     }
 
     @DeleteMapping("/owner/delete-salon/{salonId}")
-    public ResponseEntity<String> deleteSalonAccount(@PathVariable Long salonId) {
-        UserDto userDto = new UserDto();
-        userDto.setId(1L);
-        String str = salonService.deleteSalonAccount(salonId, userDto.getId());
+    public ResponseEntity<String> deleteSalonAccount(@PathVariable Long salonId,@AuthenticationPrincipal Jwt jwt) throws Exception {
+        String str = salonService.deleteSalonAccount(salonId, jwt.getClaim("userId"));
         return ResponseEntity.ok(str);
     }
 

@@ -1,7 +1,7 @@
-package com.users_micro_server.config;
+package com.service_offering.server.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.users_micro_server.exceptionHandling.UserNotFoundException;
+import com.service_offering.server.globalExceptionHandler.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -18,27 +18,29 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-@RequiredArgsConstructor
 public class SecurityConfig {
 
     private final ObjectMapper objectMapper;
     private final JwtAuthConverter jwtAuthConverter;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public DefaultSecurityFilterChain SecurityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
-                        .requestMatchers("/api/user/admin/**").hasAnyRole("SUPERADMIN", "ADMIN")
-                        .anyRequest().authenticated())
+                .authorizeHttpRequests(authentic -> authentic
+
+                        .requestMatchers("/api/owner/service-offering/**").hasRole("OWNER")
+                        .anyRequest().authenticated()
+                )
                 .sessionManagement(sessionManagement ->
                         sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .oauth2ResourceServer(oauth2 -> oauth2
-                        .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthConverter))
+                .oauth2ResourceServer(oauth2->oauth2
+                        .jwt(jwt->jwt.jwtAuthenticationConverter(jwtAuthConverter))
                         .authenticationEntryPoint((request, response, authException) -> {
 
                             response.setContentType("application/json;charset=UTF-8");
@@ -105,9 +107,9 @@ public class SecurityConfig {
                             objectMapper.writeValue(response.getWriter(), map);
                         })
                 );
-
-        return http.build();
+      return  http.build();
     }
+
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {

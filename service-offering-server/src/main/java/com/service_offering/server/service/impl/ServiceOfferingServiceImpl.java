@@ -26,6 +26,8 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
                                                                       Long salonID,
                                                                       Long categoryId,
                                                                       Long userId) {
+
+        System.out.println("createNewServiceOfferingByOwner" + userId);
         ServiceOffering serviceOfferingData = modelMapper.map(newServiceOfferingData, ServiceOffering.class);
         serviceOfferingData.setOwnerId(userId);
         serviceOfferingData.setCategoryId(categoryId);
@@ -67,17 +69,17 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
 
     @Override
     public Set<ServiceOfferingResponseDto> getAllServiceOfferingList() {
-        return serviceOfferingRepository.findAll().stream().map(item->modelMapper.map(item,ServiceOfferingResponseDto.class)).collect(Collectors.toSet());
+        return serviceOfferingRepository.findAll().stream().map(item -> modelMapper.map(item, ServiceOfferingResponseDto.class)).collect(Collectors.toSet());
     }
 
     @Override
     public ServiceOfferingResponseDto getSingleServiceOffer(Long serviceOfferingId) {
-        ServiceOffering readSingleServiceOffer=serviceOfferingRepository.findById(serviceOfferingId).orElseThrow(()->new IllegalArgumentException("Service offer is not found"));
-        return modelMapper.map(readSingleServiceOffer,ServiceOfferingResponseDto.class);
+        ServiceOffering readSingleServiceOffer = serviceOfferingRepository.findById(serviceOfferingId).orElseThrow(() -> new IllegalArgumentException("Service offer is not found"));
+        return modelMapper.map(readSingleServiceOffer, ServiceOfferingResponseDto.class);
     }
 
     @Override
     public List<ServiceOfferingResponseDto> readAllServiceOfferBySalon(Long salonId) {
-        return serviceOfferingRepository.findBySalonId(salonId).stream().map(item->modelMapper.map(item,ServiceOfferingResponseDto.class)).toList();
+        return serviceOfferingRepository.findBySalonId(salonId).stream().map(item -> modelMapper.map(item, ServiceOfferingResponseDto.class)).toList();
     }
 }

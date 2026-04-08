@@ -1,7 +1,7 @@
-package com.users_micro_server.config;
+package com.payment.server.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.users_micro_server.exceptionHandling.UserNotFoundException;
+import com.payment.server.globalExceptionHandler.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,7 +33,6 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
-                        .requestMatchers("/api/user/admin/**").hasAnyRole("SUPERADMIN", "ADMIN")
                         .anyRequest().authenticated())
                 .sessionManagement(sessionManagement ->
                         sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
