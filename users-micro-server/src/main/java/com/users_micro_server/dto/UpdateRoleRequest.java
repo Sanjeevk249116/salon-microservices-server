@@ -1,7 +1,6 @@
-package com.auth.server.dto.request;
+package com.users_micro_server.dto;
 
-
-import com.auth.server.enums.RoleEnum;
+import com.users_micro_server.enums.RoleEnum;
 import lombok.Data;
 
 @Data

@@ -5,66 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df81e6e5-d098-46c2-9984-86d4ee128666" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/clientDto/UserRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/clientDto/UserResponseClientDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/client/CreateUserProfileClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/client/CreateUserProfileClientFallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/config/JwtAuthConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/config/JwtDecoderConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/globalExceptionHandler/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/config/JwtAuthConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/config/JwtDecorderConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/globalHandleException/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/config/JwtAuthConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/config/JwtDecoderConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/globalExceptionHandler/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/config/JwtAuthConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/config/JwtDecorderConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/globalExceptionHandler/UserNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-micro-server/src/main/resources/db/migration/V1__init_schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/AuthServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/AuthServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/request/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/request/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/controllers/SuperAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/controller/SuperAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/request/UpdateRoleRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/dto/UpdateRoleRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/response/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/response/AuthResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/entity/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/entity/UserAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/entity/UserAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/enums/RoleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/enums/RoleEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/repository/RoleRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/security/CustomerUserDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/security/CustomerUserDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/SuperAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/service/SuperAdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/impl/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/resources/db/migration/V1__init_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/resources/db/migration/V1__init_schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/controller/BookingServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/controller/BookingServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/globalExceptionHandler/GlobalApiResponseStructure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/BookingServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/BookingServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/impl/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/impl/BookingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-micro-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-micro-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/globalExceptionHandler/GlobalApiResponseStructure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-micro-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/salon-micro-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/controller/SalonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/controller/SalonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/controller/ServiceOfferingSalonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/controller/ServiceOfferingSalonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/dto/ServiceOfferingResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/dto/ServiceOfferingResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/entity/ServiceOffering.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/entity/ServiceOffering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/globalExceptionHandler/GlobalApiResponseStructure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/impl/ServiceOfferingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/impl/ServiceOfferingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/impl/RefreshTokenImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/impl/RefreshTokenImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/impl/SuperAdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/service/impl/SuperAdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/resources/db/migration/V1__init_schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-micro-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-micro-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-micro-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/config/JwtAuthConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/config/JwtAuthConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/service/impl/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/service/impl/UserImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +92,12 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sanjeev Kushwaha\OneDrive\Desktop\learningJava\microservices-salon-server\salon-micro-server\src\main\java\com\salon_micro_server" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sanjeev Kushwaha\OneDrive\Desktop\learningJava\microservices-salon-server\users-micro-server\src\main\resources\db\migration" />
+      <recent name="C:\Users\Sanjeev Kushwaha\OneDrive\Desktop\learningJava\microservices-salon-server\users-micro-server\src\main\resources" />
+      <recent name="C:\Users\Sanjeev Kushwaha\OneDrive\Desktop\learningJava\microservices-salon-server\users-micro-server\src\main\resources\migration\db" />
+      <recent name="C:\Users\Sanjeev Kushwaha\OneDrive\Desktop\learningJava\microservices-salon-server\users-micro-server\src\main\resources\migration" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.UsersMicroServerApplication">
@@ -276,7 +247,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/impl/AuthServiceImpl.java</url>
-          <line>55</line>
+          <line>45</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -291,7 +262,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/config/SecurityConfig.java</url>
-          <line>112</line>
+          <line>116</line>
           <properties class="com.users_micro_server.config.SecurityConfig" method="corsConfigurationSource">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

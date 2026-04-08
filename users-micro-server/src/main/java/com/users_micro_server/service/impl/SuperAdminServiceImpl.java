@@ -1,12 +1,12 @@
-package com.auth.server.service.impl;
+package com.users_micro_server.service.impl;
 
-import com.auth.server.entity.Role;
-import com.auth.server.entity.UserAuth;
-import com.auth.server.enums.RoleEnum;
-import com.auth.server.repository.RoleRepository;
-import com.auth.server.repository.UserAuthRepository;
 
-import com.auth.server.service.SuperAdminService;
+import com.users_micro_server.entity.Role;
+import com.users_micro_server.entity.User;
+import com.users_micro_server.enums.RoleEnum;
+import com.users_micro_server.repository.RoleRepository;
+import com.users_micro_server.repository.UserRepository;
+import com.users_micro_server.service.SuperAdminService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class SuperAdminServiceImpl implements SuperAdminService {
 
-    private final UserAuthRepository userRepository;
+    private final UserRepository userRepository;
     private final RoleRepository roleRepository;
 
 
@@ -23,7 +23,7 @@ public class SuperAdminServiceImpl implements SuperAdminService {
     @Transactional
     public String updateProfileRole(Long profileId, RoleEnum roleEnum) {
 
-        UserAuth user = userRepository.findById(profileId).orElseThrow(() -> new IllegalArgumentException("Profile not found"));
+        User user = userRepository.findById(profileId).orElseThrow(() -> new IllegalArgumentException("Profile not found"));
         Role role = roleRepository.findByRoleName(roleEnum).orElseThrow(() -> new IllegalArgumentException("Role not found"));
 
         user.getRole().add(role);

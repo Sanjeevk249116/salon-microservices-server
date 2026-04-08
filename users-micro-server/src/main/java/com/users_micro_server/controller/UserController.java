@@ -28,14 +28,8 @@ public class UserController {
 
     @PostMapping("/create")
     public ResponseEntity<UserResponseDto> createUserProfile(@RequestBody @Valid UserDto newUser, @AuthenticationPrincipal Jwt jwt) {
-        List<String> rolesList = jwt.getClaim("roles");
 
-        Set<String> roles = new HashSet<>(rolesList);
-
-        Set<RoleEnum> roleEnums = roles.stream()
-                .map(RoleEnum::valueOf)
-                .collect(Collectors.toSet());
-        UserResponseDto user = userService.createUserProfile(newUser, roleEnums);
+        UserResponseDto user = userService.createUserProfile(newUser);
         return ResponseEntity.status(201).body(user);
     }
 
@@ -47,8 +41,8 @@ public class UserController {
 
     @GetMapping("/admin/read/user-list")
     @PreAuthorize("hasAnyRole('ADMIN','SUPERADMIN')")
-    public ResponseEntity<List<User>> getUserList() {
-        List<User> userList = userService.getAllUserList();
+    public ResponseEntity<List<UserResponseDto>> getUserList() {
+        List<UserResponseDto> userList = userService.getAllUserList();
         return ResponseEntity.status(200).body(userList);
     }
 

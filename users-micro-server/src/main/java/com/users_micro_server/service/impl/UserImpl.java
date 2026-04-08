@@ -3,9 +3,11 @@ package com.users_micro_server.service.impl;
 
 import com.users_micro_server.dto.UserDto;
 import com.users_micro_server.dto.UserResponseDto;
+import com.users_micro_server.entity.Role;
 import com.users_micro_server.entity.User;
 import com.users_micro_server.enums.RoleEnum;
 import com.users_micro_server.exceptionHandling.CustomException;
+import com.users_micro_server.repository.RoleRepository;
 import com.users_micro_server.repository.UserRepository;
 import com.users_micro_server.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +27,7 @@ public class UserImpl implements UserService {
 
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
+    private final RoleRepository roleRepository;
 
     @Override
     public UserResponseDto getUserProfile(String email) {
@@ -34,25 +37,49 @@ public class UserImpl implements UserService {
             throw new CustomException("Profile is not found", 401);
         }
 
-        return modelMapper.map(user, UserResponseDto.class);
+        Set<RoleEnum> roles = user.getRole().stream().map(Role::getRoleName).collect(Collectors.toSet());
+        UserResponseDto userResponseDto = modelMapper.map(user, UserResponseDto.class);
+        userResponseDto.setRole(roles);
+
+        return userResponseDto;
     }
 
     @Override
     @Transactional
-    public UserResponseDto createUserProfile(UserDto newUser, Set<RoleEnum> role) {
+    public UserResponseDto createUserProfile(UserDto newUser) {
         if (userRepository.existsByEmail(newUser.getEmail())) {
             throw new CustomException("Email already exists in user profile.", 401);
         }
+
+        Role role = roleRepository.findByRoleName(RoleEnum.ROLE_USER).orElseThrow(() -> new IllegalArgumentException("role not found"));
         User user = modelMapper.map(newUser, User.class);
-        user.setRole(role);
-        return modelMapper.map(userRepository.save(user), UserResponseDto.class);
+        user.setRole(Set.of(role));
+        User createdNew = userRepository.save(user);
+        Set<RoleEnum> roles = createdNew.getRole().stream().map(Role::getRoleName).collect(Collectors.toSet());
+
+        UserResponseDto responseDto = modelMapper.map(createdNew, UserResponseDto.class);
+        responseDto.setRole(roles);
+        return responseDto;
     }
 
     @Override
-    public List<User> getAllUserList() {
-        System.out.println("getAllUserList");
+    public List<UserResponseDto> getAllUserList() {
         List<User> userList = userRepository.findAll();
-        return userList;
+        List<UserResponseDto> userResponseDtoList = userList.stream()
+                .map(user -> {
+                    UserResponseDto dto = modelMapper.map(user, UserResponseDto.class);
+
+                    Set<RoleEnum> roles = user.getRole()
+                            .stream()
+                            .map(Role::getRoleName)
+                            .collect(Collectors.toSet());
+
+                    dto.setRole(roles);
+
+                    return dto;
+                })
+                .toList();
+        return userResponseDtoList;
     }
 
     @Override

@@ -1,17 +1,13 @@
 package com.auth.server.service.impl;
 
-
 import com.auth.server.dto.clientDto.UserRequestDto;
 import com.auth.server.dto.request.LoginRequest;
 import com.auth.server.dto.request.RefreshTokenRequest;
 import com.auth.server.dto.request.RegisterRequest;
 import com.auth.server.dto.response.AuthResponse;
 import com.auth.server.entity.RefreshToken;
-import com.auth.server.entity.Role;
 import com.auth.server.entity.UserAuth;
-import com.auth.server.enums.RoleEnum;
 import com.auth.server.exceptionHandling.CustomException;
-import com.auth.server.repository.RoleRepository;
 import com.auth.server.repository.UserAuthRepository;
 import com.auth.server.security.CustomerUserDetail;
 import com.auth.server.service.AuthService;
@@ -23,14 +19,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -42,7 +34,6 @@ public class AuthServiceImpl implements AuthService {
     private final JwtUtils jwtUtils;
     private final RefreshTokenImpl refreshTokenImpl;
     private final AuthenticationManager authenticationManager;
-    private final RoleRepository roleRepository;
     private final CreateUserProfileClient createUserProfileClient;
 
     @Override
@@ -52,10 +43,8 @@ public class AuthServiceImpl implements AuthService {
             throw new CustomException("Email already exists with" + registerRequest.getEmail(), 400);
         }
 
-        Role role = roleRepository.findByRoleName(RoleEnum.ROLE_USER).orElseThrow(() -> new IllegalArgumentException("role not found"));
         UserAuth newUser = modelMapper.map(registerRequest, UserAuth.class);
         newUser.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
-        newUser.setRole(Set.of(role));
 
         UserAuth savedUser = userRepository.save(newUser);
 
@@ -64,7 +53,7 @@ public class AuthServiceImpl implements AuthService {
 
         RefreshToken refreshToken = refreshTokenImpl.createNewRefreshToken(savedUser);
 
-        //create user profile
+//        //create user profile
         String bearerToken = "Bearer " + accessToken;
         String fullName = savedUser.getFirstName() + " " + savedUser.getLastName();
 
@@ -122,13 +111,11 @@ public class AuthServiceImpl implements AuthService {
     }
 
     private AuthResponse buildApiResponse(String accessToken, String token, CustomerUserDetail customerUserDetail) {
-        List<String> roles = customerUserDetail.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList();
 
         return AuthResponse.builder()
                 .accessToken(accessToken)
                 .refreshToken(token)
                 .email(customerUserDetail.getUsername())
-                .roles(roles)
                 .tokenType("Bearer")
                 .expiresIn(jwtUtils.getAccess_token_expiration())
                 .build();
