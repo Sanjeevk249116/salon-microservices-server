@@ -1,5 +1,8 @@
 package com.service_offering.server.config;
 
+import com.service_offering.server.dto.UserResponseClientDto;
+import com.service_offering.server.service.client.GetUserDetailsClient;
+import lombok.RequiredArgsConstructor;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,11 +18,19 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Component
+@RequiredArgsConstructor
 public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationToken> {
+
+    private final GetUserDetailsClient getUserDetailsClient;
 
     @Override
     public AbstractAuthenticationToken convert(Jwt source) {
-        Object jwtRole=source.getClaim("roles");
+
+        UserResponseClientDto userResponseClientDto=getUserDetailsClient.getUserProfile("Bearer "+source.getTokenValue()).getBody();
+
+
+        assert userResponseClientDto != null;
+        Object jwtRole=userResponseClientDto.getRole();
         Collection<SimpleGrantedAuthority> grantedAuthorities ;
 
         if(jwtRole instanceof List<?> jwtRoleList){

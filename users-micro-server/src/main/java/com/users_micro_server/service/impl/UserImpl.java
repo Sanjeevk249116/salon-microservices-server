@@ -37,7 +37,7 @@ public class UserImpl implements UserService {
             throw new CustomException("Profile is not found", 401);
         }
 
-        Set<RoleEnum> roles = user.getRole().stream().map(Role::getRoleName).collect(Collectors.toSet());
+        Set<String> roles = user.getRole().stream().map(role -> role.getRoleName().name()).collect(Collectors.toSet());
         UserResponseDto userResponseDto = modelMapper.map(user, UserResponseDto.class);
         userResponseDto.setRole(roles);
 
@@ -55,7 +55,7 @@ public class UserImpl implements UserService {
         User user = modelMapper.map(newUser, User.class);
         user.setRole(Set.of(role));
         User createdNew = userRepository.save(user);
-        Set<RoleEnum> roles = createdNew.getRole().stream().map(Role::getRoleName).collect(Collectors.toSet());
+        Set<String> roles = createdNew.getRole().stream().map(items -> items.getRoleName().name()).collect(Collectors.toSet());
 
         UserResponseDto responseDto = modelMapper.map(createdNew, UserResponseDto.class);
         responseDto.setRole(roles);
@@ -69,9 +69,9 @@ public class UserImpl implements UserService {
                 .map(user -> {
                     UserResponseDto dto = modelMapper.map(user, UserResponseDto.class);
 
-                    Set<RoleEnum> roles = user.getRole()
+                    Set<String> roles = user.getRole()
                             .stream()
-                            .map(Role::getRoleName)
+                            .map(role -> role.getRoleName().name())
                             .collect(Collectors.toSet());
 
                     dto.setRole(roles);

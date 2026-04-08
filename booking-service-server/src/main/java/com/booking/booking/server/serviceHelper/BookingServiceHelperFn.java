@@ -1,9 +1,8 @@
 package com.booking.booking.server.serviceHelper;
 
-import com.booking.booking.server.dto.SalonDto;
+import com.booking.booking.server.dto.SalonResponseDto;
 import com.booking.booking.server.entity.BookingService;
 import com.booking.booking.server.globalExceptionHandler.CustomException;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -13,7 +12,7 @@ import java.util.List;
 @Component
 public class BookingServiceHelperFn {
 
-    public Boolean checkTimeSlot(SalonDto salon, LocalDateTime bookingStartTime, LocalDateTime bookingEndTime,List<BookingService> existingBookings) {
+    public Boolean checkTimeSlot(SalonResponseDto salon, LocalDateTime bookingStartTime, LocalDateTime bookingEndTime, List<BookingService> existingBookings) {
 
         LocalDateTime salonOpenTime = salon.getOpenTime().atDate(bookingStartTime.toLocalDate());
         LocalDateTime salonCloseTime = salon.getCloseTime().atDate(bookingEndTime.toLocalDate());

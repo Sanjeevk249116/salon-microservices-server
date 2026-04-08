@@ -5,12 +5,14 @@ import com.salon_micro_server.entity.Salon;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface SalonRepository extends JpaRepository<Salon, Long> {
     Optional<Salon> findByNameIgnoreCase(String name);
+    List<Salon> findByOwnerId(Long id);
 
     @Query(
             "SELECT s FROM Salon s WHERE " +

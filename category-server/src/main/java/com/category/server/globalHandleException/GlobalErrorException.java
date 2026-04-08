@@ -74,14 +74,13 @@ public class GlobalErrorException {
     public ResponseEntity<Map<String, Object>> handleCustom(CustomException ex) {
 
         Map<String, Object> response = new HashMap<>();
-        response.put("statusCode", 404);
+        response.put("statusCode", ex.getCode());
         response.put("status", false);
         response.put("message", ex.getMessage());
         response.put("data", null);
 
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
-
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<Map<String, Object>> notReadableExpection(HttpMessageNotReadableException ex) {
         Map<String, Object> error = new HashMap<>();

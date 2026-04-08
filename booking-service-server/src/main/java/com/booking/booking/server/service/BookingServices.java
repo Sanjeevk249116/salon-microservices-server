@@ -11,7 +11,7 @@ import java.util.Set;
 
 @Service
 public interface BookingServices {
-    BookingService createNewBookingService(BookingServiceDto newBookingServiceData, Long userId, SalonDto salon, Set<ServiceOfferDto> serviceDtoSet);
+    BookingService createNewBookingService(BookingServiceDto newBookingServiceData, Long userId, SalonResponseDto salon, Set<ServiceOfferingResponseDto> serviceDtoSet);
 
     List<BookingService> getAllBookingByCustomer(Long customerId);
 

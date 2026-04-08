@@ -1,5 +1,8 @@
 package com.booking.booking.server.config;
 
+import com.booking.booking.server.dto.UserResponseClientDto;
+import com.booking.booking.server.service.client.GetUserDetailsClient;
+import lombok.RequiredArgsConstructor;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,11 +17,18 @@ import java.util.stream.Collectors;
 
 
 @Component
+@RequiredArgsConstructor
 public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationToken> {
+
+    private final GetUserDetailsClient getUserDetailsClient;
 
     @Override
     public AbstractAuthenticationToken convert(Jwt source) {
-        Object roleBase = source.getClaims().get("roles");
+
+        UserResponseClientDto user=getUserDetailsClient.getUserProfile(source.getTokenValue()).getBody();
+
+        assert user != null;
+        Object roleBase = user.getRole();
         Collection<SimpleGrantedAuthority> authorities;
 
         if (roleBase instanceof List<?> rolesList) {

@@ -47,13 +47,13 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
                 );
             }
 
-            Set<RoleEnum> roleEnumSet = user.getRole()
+            Set<String> roleEnumSet = user.getRole()
                     .stream()
-                    .map(Role::getRoleName)
+                    .map(role -> role.getRoleName().name())
                     .collect(Collectors.toSet());
 
             authorities = roleEnumSet.stream()
-                    .map(role -> new SimpleGrantedAuthority(role.name()))
+                    .map(SimpleGrantedAuthority::new)
                     .collect(Collectors.toList());
         }
 
