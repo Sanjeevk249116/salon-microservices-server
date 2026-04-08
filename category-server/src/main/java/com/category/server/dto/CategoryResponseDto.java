@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 public class CategoryResponseDto {
     private Long id;
     private String categoryName;
+    private Long salonId;
     private String categoryImage;
     private LocalDateTime updateAt;
     private LocalDateTime createAt;

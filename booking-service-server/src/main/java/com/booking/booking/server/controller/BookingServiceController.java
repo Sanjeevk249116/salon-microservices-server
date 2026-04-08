@@ -4,6 +4,8 @@ import com.booking.booking.server.domain.BookingStatus;
 import com.booking.booking.server.dto.*;
 import com.booking.booking.server.entity.BookingService;
 import com.booking.booking.server.service.BookingServices;
+import com.booking.booking.server.service.client.GetSalonDetailClient;
+import com.booking.booking.server.service.client.ServiceOfferingClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,8 +15,6 @@ import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -24,36 +24,25 @@ import java.util.Set;
 public class BookingServiceController {
 
     private final BookingServices bookingService;
+    private final GetSalonDetailClient getSalonDetailClient;
+    private final ServiceOfferingClient serviceOfferingClient;
 
-    @PostMapping("/owner/create-new")
-    @PreAuthorize("hasRole('OWNER')")
-    public ResponseEntity<BookingService> createNewServiceBooking(@RequestParam Long salonId, @RequestBody BookingServiceDto newBookingServiceData, @AuthenticationPrincipal Jwt jwt) {
-        SalonDto salon = new SalonDto();
-        salon.setId(salonId);
-        salon.setOpenTime(LocalTime.now());
-        salon.setCloseTime(LocalTime.now().plusHours(12));
+    @PostMapping("/create-new/{salonId}")
+    public ResponseEntity<BookingService> createNewServiceBooking(@PathVariable Long salonId, @RequestBody BookingServiceDto newBookingServiceData, @AuthenticationPrincipal Jwt jwt) {
 
-        Set<ServiceOfferDto> serviceDtoSet = new HashSet<>();
-        ServiceOfferDto serviceDto = new ServiceOfferDto();
+        SalonResponseDto salonResponseDto=getSalonDetailClient.readSingleSalon(salonId).getBody();
 
-        serviceDto.setId(1L);
-        serviceDto.setPrice(399);
-        serviceDto.setDuration(45);
-        serviceDto.setServiceOfferingName("Hair cut for men");
-        serviceDto.setDescription("Hair cutting");
+        Set<ServiceOfferingResponseDto> serviceOfferingResponseDtos=serviceOfferingClient.readAllServiceOfferByIds(newBookingServiceData.getServicesIds()).getBody();
 
-        serviceDtoSet.add(serviceDto);
-
-        BookingService createdService = bookingService.createNewBookingService(newBookingServiceData, jwt.getClaim("userId"), salon, serviceDtoSet);
+        BookingService createdService = bookingService.createNewBookingService(newBookingServiceData, jwt.getClaim("userId"), salonResponseDto, serviceOfferingResponseDtos);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdService);
     }
 
     @GetMapping("/owner/read/list-customer")
     @PreAuthorize("hasRole('OWNER')")
-    public ResponseEntity<List<BookingService>> getBookingByCustomer() {
-        UserDto user = new UserDto();
-        user.setId(1L);
-        List<BookingService> getALlBookingByCustomer = bookingService.getAllBookingByCustomer(user.getId());
+    public ResponseEntity<List<BookingService>> getBookingByCustomer(@AuthenticationPrincipal Jwt jwt) {
+
+        List<BookingService> getALlBookingByCustomer = bookingService.getAllBookingByCustomer(jwt.getClaim("userId"));
         return ResponseEntity.ok(getALlBookingByCustomer);
     }
 

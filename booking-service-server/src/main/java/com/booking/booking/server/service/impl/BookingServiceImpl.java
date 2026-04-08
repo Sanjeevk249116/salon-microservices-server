@@ -27,8 +27,8 @@ public class BookingServiceImpl implements BookingServices {
 
 
     @Override
-    public BookingService createNewBookingService(BookingServiceDto newBookingServiceData, Long userId, SalonDto salon, Set<ServiceOfferDto> serviceDtoSet) {
-        int totalDuration = serviceDtoSet.stream().mapToInt(ServiceOfferDto::getDuration).sum();
+    public BookingService createNewBookingService(BookingServiceDto newBookingServiceData, Long userId, SalonResponseDto salon, Set<ServiceOfferingResponseDto> serviceDtoSet) {
+        int totalDuration = serviceDtoSet.stream().mapToInt(ServiceOfferingResponseDto::getDuration).sum();
 
         LocalDateTime bookingStartTime = newBookingServiceData.getStartTime();
         LocalDateTime bookingEndTime = bookingStartTime.plusMinutes(totalDuration);
@@ -36,8 +36,8 @@ public class BookingServiceImpl implements BookingServices {
 
         Boolean isSlotAvailable = bookingServiceHelperFn.checkTimeSlot(salon, bookingStartTime, bookingEndTime, existingBooking);
 
-        int totalPrice = serviceDtoSet.stream().mapToInt(ServiceOfferDto::getPrice).sum();
-        Set<Long> idList = serviceDtoSet.stream().map(ServiceOfferDto::getId).collect(Collectors.toSet());
+        int totalPrice = serviceDtoSet.stream().mapToInt(ServiceOfferingResponseDto::getPrice).sum();
+        Set<Long> idList = serviceDtoSet.stream().map(ServiceOfferingResponseDto::getId).collect(Collectors.toSet());
 
         BookingService newBookingService = new BookingService();
         newBookingService.setCustomerId(userId);

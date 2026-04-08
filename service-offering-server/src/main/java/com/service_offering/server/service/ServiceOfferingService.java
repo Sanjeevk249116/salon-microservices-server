@@ -19,4 +19,6 @@ public interface ServiceOfferingService {
     ServiceOfferingResponseDto getSingleServiceOffer(Long serviceOfferingId);
 
     List<ServiceOfferingResponseDto> readAllServiceOfferBySalon(Long salonId);
+
+    Set<ServiceOfferingResponseDto> readAllServiceOfferByIds(Set<Long> ids);
 }

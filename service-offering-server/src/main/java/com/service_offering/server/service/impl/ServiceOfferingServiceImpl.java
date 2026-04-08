@@ -27,7 +27,6 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
                                                                       Long categoryId,
                                                                       Long userId) {
 
-        System.out.println("createNewServiceOfferingByOwner" + userId);
         ServiceOffering serviceOfferingData = modelMapper.map(newServiceOfferingData, ServiceOffering.class);
         serviceOfferingData.setOwnerId(userId);
         serviceOfferingData.setCategoryId(categoryId);
@@ -43,7 +42,7 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
 
         ServiceOffering existingServiceOffer = serviceOfferingRepository.findById(serviceOfferingId).orElseThrow(() -> new CustomException("Service Offer is not found"));
         if (!existingServiceOffer.getOwnerId().equals(ownerId)) {
-            throw new CustomException("You are not allow to perform this action");
+            throw new CustomException("You are not allow to perform this action", 400);
         }
 
         if (newServiceOfferingData.getServiceOfferingName() != null) {
@@ -81,5 +80,16 @@ public class ServiceOfferingServiceImpl implements ServiceOfferingService {
     @Override
     public List<ServiceOfferingResponseDto> readAllServiceOfferBySalon(Long salonId) {
         return serviceOfferingRepository.findBySalonId(salonId).stream().map(item -> modelMapper.map(item, ServiceOfferingResponseDto.class)).toList();
+    }
+
+    @Override
+    public Set<ServiceOfferingResponseDto> readAllServiceOfferByIds(Set<Long> ids) {
+
+        Set<ServiceOffering> serviceOfferings =
+                serviceOfferingRepository.findByIdIn(ids);
+
+        return serviceOfferings.stream()
+                .map(service -> modelMapper.map(service, ServiceOfferingResponseDto.class))
+                .collect(Collectors.toSet());
     }
 }

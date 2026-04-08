@@ -1,8 +1,7 @@
-package com.auth.server.controllers;
+package com.users_micro_server.controller;
 
-
-import com.auth.server.dto.request.UpdateRoleRequest;
-import com.auth.server.service.SuperAdminService;
+import com.users_micro_server.dto.UpdateRoleRequest;
+import com.users_micro_server.service.SuperAdminService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

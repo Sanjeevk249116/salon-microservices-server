@@ -1,7 +1,7 @@
-package com.auth.server.entity;
+package com.users_micro_server.entity;
 
 
-import com.auth.server.enums.RoleEnum;
+import com.users_micro_server.enums.RoleEnum;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;

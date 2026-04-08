@@ -13,9 +13,9 @@ import java.util.Set;
 public interface UserService {
     UserResponseDto getUserProfile(String Email);
 
-    UserResponseDto createUserProfile(UserDto newUser, Set<RoleEnum> role);
+    UserResponseDto createUserProfile(UserDto newUser);
 
-    List<User> getAllUserList();
+    List<UserResponseDto> getAllUserList();
 
     User updateUserProfile(Long userId, UserDto updateProfileData);
 

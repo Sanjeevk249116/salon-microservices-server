@@ -1,6 +1,5 @@
 package com.auth.server.dto.clientDto;
 
-import com.auth.server.enums.RoleEnum;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -15,5 +14,5 @@ public class UserResponseClientDto {
     private String userName;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private Set<RoleEnum> role;
+    private Set<String> role;
 }

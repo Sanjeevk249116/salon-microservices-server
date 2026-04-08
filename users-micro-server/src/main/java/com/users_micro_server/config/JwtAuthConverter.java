@@ -1,6 +1,8 @@
 package com.users_micro_server.config;
 
+import com.users_micro_server.entity.Role;
 import com.users_micro_server.entity.User;
+import com.users_micro_server.enums.RoleEnum;
 import com.users_micro_server.exceptionHandling.UserNotFoundException;
 import com.users_micro_server.repository.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
@@ -35,31 +37,26 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
                         .getRequest();
 
         String path = request.getRequestURI();
+        Collection<SimpleGrantedAuthority> authorities = List.of();
+        if (!path.contains("/api/user/create")) {
 
-        if (!path.equals("/api/user/create")) {
             User user = userRepository.findByEmail(username);
             if (user == null) {
-                throw new UserNotFoundException("User not found. So please login with correct username", 401);
+                throw new UserNotFoundException(
+                        "User not found. Please login with correct username", 401
+                );
             }
+
+            Set<String> roleEnumSet = user.getRole()
+                    .stream()
+                    .map(role -> role.getRoleName().name())
+                    .collect(Collectors.toSet());
+
+            authorities = roleEnumSet.stream()
+                    .map(SimpleGrantedAuthority::new)
+                    .collect(Collectors.toList());
         }
 
-
-        Object rolesClaim = jwt.getClaims().get("roles");
-        Collection<SimpleGrantedAuthority> authorities;
-
-        if (rolesClaim instanceof List<?> rolesList) {
-            authorities = rolesList.stream()
-                    .map(role -> new SimpleGrantedAuthority(role.toString()))
-                    .collect(Collectors.toList());
-        } else if (rolesClaim instanceof Set<?> rolesSet) {
-            authorities = rolesSet.stream()
-                    .map(role -> new SimpleGrantedAuthority(role.toString()))
-                    .collect(Collectors.toList());
-        } else {
-            authorities = List.of();
-        }
-
-
-        return new JwtAuthenticationToken(jwt, authorities, jwt.getSubject());
+        return new JwtAuthenticationToken(jwt, authorities, username);
     }
 }

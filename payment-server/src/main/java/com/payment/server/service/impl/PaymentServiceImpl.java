@@ -4,6 +4,7 @@ import com.payment.server.domain.PaymentMethod;
 import com.payment.server.domain.PaymentOrderStatus;
 import com.payment.server.dto.BookingDto;
 import com.payment.server.dto.UserDto;
+import com.payment.server.dto.UserResponseClientDto;
 import com.payment.server.entity.Payment;
 import com.payment.server.globalExceptionHandler.CustomException;
 import com.payment.server.payloadResponseStructure.PaymentLinkResponse;
@@ -30,7 +31,7 @@ public class PaymentServiceImpl implements PaymentService {
 
 
     @Override
-    public PaymentLinkResponse createOrderAndGenerateNewPayment(UserDto user, BookingDto booking, PaymentMethod paymentMethod) {
+    public PaymentLinkResponse createOrderAndGenerateNewPayment(UserResponseClientDto user, BookingDto booking, PaymentMethod paymentMethod) {
 
         Long amount = (long) booking.getTotalPrice();
         Payment createPaymentOrder = new Payment();
@@ -75,7 +76,7 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public PaymentLink createRazorpayPaymentLink(UserDto user, Long amount, Long orderId) {
+    public PaymentLink createRazorpayPaymentLink(UserResponseClientDto user, Long amount, Long orderId) {
 
         try {
             JSONObject paymentLinkRequest = new JSONObject();
@@ -105,7 +106,7 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public String createStripePaymentLink(UserDto user, Long amount, Long orderId) {
+    public String createStripePaymentLink(UserResponseClientDto user, Long amount, Long orderId) {
         try {
             SessionCreateParams params =
                     SessionCreateParams.builder()

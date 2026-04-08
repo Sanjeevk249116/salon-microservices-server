@@ -2,6 +2,7 @@ package com.salon_micro_server.controller;
 
 
 import com.salon_micro_server.dto.SalonDto;
+import com.salon_micro_server.dto.SalonResponseDto;
 import com.salon_micro_server.dto.UserDto;
 import com.salon_micro_server.entity.Salon;
 import com.salon_micro_server.service.SalonService;
@@ -9,6 +10,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
@@ -42,8 +44,8 @@ public class SalonController {
     }
 
     @GetMapping("/read-single-salon/{salonId}")
-    public ResponseEntity<Salon> readSingleSalon(@PathVariable Long salonId) {
-        Salon salon = salonService.readSingleSalonById(salonId);
+    public ResponseEntity<SalonResponseDto> readSingleSalon(@PathVariable Long salonId) {
+        SalonResponseDto salon = salonService.readSingleSalonById(salonId);
         return ResponseEntity.ok(salon);
     }
 
@@ -53,10 +55,19 @@ public class SalonController {
         return ResponseEntity.ok(str);
     }
 
+    @GetMapping("/owner/read/my-salon")
+    @PreAuthorize("hasRole('OWNER')")
+    public ResponseEntity<List<SalonResponseDto>> getMySalonDetails(@AuthenticationPrincipal Jwt jwt) throws Exception {
+        List<SalonResponseDto> salonResponseDto =salonService.getMySalonDetail(jwt.getClaim("userId"));
+        return ResponseEntity.ok(salonResponseDto);
+    }
+
     @GetMapping("/search-salon")
     public ResponseEntity<List<Salon>> searchSalon(@RequestParam(value = "keyword", required = false) String keyword) {
         List<Salon> salon = salonService.searchSalon(keyword);
         return ResponseEntity.ok(salon);
     }
+
+
 
 }

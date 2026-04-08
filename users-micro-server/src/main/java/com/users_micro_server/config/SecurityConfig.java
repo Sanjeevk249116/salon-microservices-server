@@ -33,7 +33,11 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
+//                        .requestMatchers("/api/user/create").permitAll()
                         .requestMatchers("/api/user/admin/**").hasAnyRole("SUPERADMIN", "ADMIN")
+                        .requestMatchers("/api/v1/admin/**").hasAnyRole("ADMIN","SUPERADMIN")
+                        .requestMatchers("/api/v1/owner/**").hasAnyRole("OWNER", "ADMIN", "SUPERADMIN")
+                        .requestMatchers("/api/v2/admin/**").hasRole("SUPERADMIN")
                         .anyRequest().authenticated())
                 .sessionManagement(sessionManagement ->
                         sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

@@ -2,6 +2,7 @@ package com.salon_micro_server.service.salonImpl;
 
 
 import com.salon_micro_server.dto.SalonDto;
+import com.salon_micro_server.dto.SalonResponseDto;
 import com.salon_micro_server.entity.Salon;
 import com.salon_micro_server.globalExceptionHandler.CustomException;
 import com.salon_micro_server.repository.SalonRepository;
@@ -76,16 +77,15 @@ public class SalonServiceImplementation implements SalonService {
 
     @Override
     public List<Salon> getAllSalonList() {
-        System.out.println("hello request is service comming here >>>>>>>>>>>>>************");
 
         System.out.println("getAllSalonList "+salonRepository.findAll());
         return salonRepository.findAll();
     }
 
     @Override
-    public Salon readSingleSalonById(Long salonId) {
-        return salonRepository.findById(salonId).orElseThrow(() -> new CustomException("Salon not found"));
-
+    public SalonResponseDto readSingleSalonById(Long salonId) {
+         Salon salon= salonRepository.findById(salonId).orElseThrow(() -> new CustomException("Salon not found"));
+        return modelMapper.map(salon, SalonResponseDto.class);
     }
 
     @Override
@@ -100,5 +100,14 @@ public class SalonServiceImplementation implements SalonService {
     @Override
     public List<Salon> searchSalon(String keyword) {
         return salonRepository.searchSalons(keyword);
+    }
+
+    @Override
+    public List<SalonResponseDto> getMySalonDetail(Long userId) {
+        List<Salon> salon=salonRepository.findByOwnerId(userId);
+        if(salon.isEmpty()){
+            throw new CustomException("Salon not found");
+        }
+        return salon.stream().map(salons->modelMapper.map(salons, SalonResponseDto.class)).toList()   ;
     }
 }

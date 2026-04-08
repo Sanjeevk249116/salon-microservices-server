@@ -24,6 +24,7 @@ import java.util.Map;
 public class SecurityConfig {
 
     private final ObjectMapper objectMapper;
+    private final JwtAuthConverter  jwtAuthConverter;
 
     @Bean
     public SecurityFilterChain SecurityFilterChain(HttpSecurity http) throws Exception {
@@ -37,7 +38,7 @@ public class SecurityConfig {
                         )
                 .sessionManagement(sessionManagement -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .oauth2ResourceServer(oauth2->oauth2.
-                        jwt(jwt -> jwt.jwtAuthenticationConverter(new JwtAuthConverter())))
+                        jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthConverter)))
                 .exceptionHandling(exceptionError -> exceptionError
 
                         .authenticationEntryPoint((request, response, authException) -> {

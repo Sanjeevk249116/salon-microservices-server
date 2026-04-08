@@ -4,13 +4,17 @@ import com.payment.server.domain.PaymentMethod;
 import com.payment.server.dto.BookingDto;
 import com.payment.server.dto.PaymentRequestDto;
 import com.payment.server.dto.UserDto;
+import com.payment.server.dto.UserResponseClientDto;
 import com.payment.server.entity.Payment;
 import com.payment.server.payloadResponseStructure.PaymentLinkResponse;
 import com.payment.server.service.PaymentService;
+import com.payment.server.service.client.GetUserDetailsClient;
 import com.razorpay.RazorpayException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
@@ -19,16 +23,14 @@ import org.springframework.web.bind.annotation.*;
 public class PaymentController {
 
     private final PaymentService paymentService;
+    private final GetUserDetailsClient getUserDetailsClient;
 
     @PostMapping("/create/new-payment-link")
-    public ResponseEntity<PaymentLinkResponse> createOrderAndGetPaymentLink(@RequestBody BookingDto booking, @RequestParam PaymentMethod paymentMethod) {
-        UserDto user = new UserDto();
-        user.setId(1L);
-        user.setPhone("9044011112");
-        user.setEmail("priyanshuharrdy@gmail.com");
-        user.setFullName("Priyanshu dewidi");
+    public ResponseEntity<PaymentLinkResponse> createOrderAndGetPaymentLink(@RequestBody BookingDto booking, @RequestParam PaymentMethod paymentMethod, @AuthenticationPrincipal Jwt jwt) throws RazorpayException {
 
-        PaymentLinkResponse paymentResponseLink = paymentService.createOrderAndGenerateNewPayment(user, booking, paymentMethod);
+        UserResponseClientDto userResponseClientDto=getUserDetailsClient.getUserProfile("Bearer "+jwt.getTokenValue()).getBody();
+
+        PaymentLinkResponse paymentResponseLink = paymentService.createOrderAndGenerateNewPayment(userResponseClientDto, booking, paymentMethod);
         return ResponseEntity.status(HttpStatus.CREATED).body(paymentResponseLink);
     }
 

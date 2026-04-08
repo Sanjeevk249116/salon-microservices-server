@@ -1,7 +1,6 @@
-package com.auth.server.service;
+package com.users_micro_server.service;
 
-
-import com.auth.server.enums.RoleEnum;
+import com.users_micro_server.enums.RoleEnum;
 import org.springframework.stereotype.Service;
 
 @Service
