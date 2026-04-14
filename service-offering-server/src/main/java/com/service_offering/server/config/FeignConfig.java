@@ -1,4 +1,4 @@
-package com.auth.server.config;
+package com.service_offering.server.config;
 
 
 import org.springframework.context.annotation.Bean;

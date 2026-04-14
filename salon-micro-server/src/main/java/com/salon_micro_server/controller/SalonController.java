@@ -27,6 +27,7 @@ public class SalonController {
 
     @PostMapping("/create-new-salon")
     public ResponseEntity<Salon> createSalon(@RequestBody @Valid SalonDto newSalonData, @AuthenticationPrincipal Jwt jwt) throws Exception {
+        System.out.println("Salon created with name " + jwt.getClaim("userId")+ jwt.getClaims());
         Salon newSalon = salonService.createNewSalon(newSalonData, jwt.getClaim("userId"));
         return ResponseEntity.status(HttpStatus.CREATED).body(newSalon);
     }

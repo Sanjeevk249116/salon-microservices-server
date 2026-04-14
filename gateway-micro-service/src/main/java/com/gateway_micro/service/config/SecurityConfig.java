@@ -37,7 +37,7 @@ public class SecurityConfig {
                             response.getHeaders().setContentType(MediaType.APPLICATION_JSON);
 
                             Map<String, Object> body = Map.of(
-                                    "code", 401,
+                                    "statusCode", 401,
                                     "error", "Unauthorized",
                                     "message", "Invalid or missing token.",
                                     "path", exchange.getRequest().getPath().value()
@@ -59,7 +59,7 @@ public class SecurityConfig {
                             response.getHeaders().setContentType(MediaType.APPLICATION_JSON);
 
                             Map<String, Object> body = Map.of(
-                                    "code", 401,
+                                    "statusCode", 401,
                                     "error", "Unauthorized",
                                     "message", "Access Denied. You are not authorized to access this resource.",
                                     "path", exchange.getRequest().getPath().value()

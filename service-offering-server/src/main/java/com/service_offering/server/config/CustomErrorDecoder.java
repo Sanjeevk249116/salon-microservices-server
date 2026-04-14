@@ -1,8 +1,9 @@
-package com.auth.server.config;
+package com.service_offering.server.config;
 
-import com.auth.server.dto.clientDto.ErrorResponse;
-import com.auth.server.exceptionHandling.FeignCustomException;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.service_offering.server.dto.ErrorResponse;
+import com.service_offering.server.globalExceptionHandler.FeignCustomException;
 import feign.Response;
 import feign.codec.ErrorDecoder;
 
@@ -10,7 +11,7 @@ import java.io.InputStream;
 
 
 public class CustomErrorDecoder implements ErrorDecoder {
-    private final ObjectMapper objectMapper=new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
 
     @Override
@@ -26,6 +27,7 @@ public class CustomErrorDecoder implements ErrorDecoder {
             );
 
         } catch (Exception e) {
+            System.err.println("??????????????????????????????"+e);
             return new RuntimeException("Unknown error occurred");
         }
     }

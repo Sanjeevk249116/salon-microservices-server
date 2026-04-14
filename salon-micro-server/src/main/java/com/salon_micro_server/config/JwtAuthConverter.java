@@ -28,7 +28,6 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
 
         UserResponseClientDto user = getUserDetailsClient.getUserProfile("Bearer " + tokenValue).getBody();
 
-
         assert user != null;
         Object roleBase = user.getRole();
         Collection<SimpleGrantedAuthority> authorities;

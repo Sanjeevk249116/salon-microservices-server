@@ -5,88 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df81e6e5-d098-46c2-9984-86d4ee128666" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/SalonResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/ServiceOfferingResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/UserResponseClientDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/GetSalonDetailClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/GetSalonDetailClientFallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/GetUserDetailClientFallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/GetUserDetailsClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/ServiceOfferingClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/dto/SalonResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/dto/UserResponseClientDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/service/client/GetSalonDetailClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/service/client/GetSalonDetailClientFallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/service/client/GetUserDetailClientFallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/service/client/GetUserDetailsClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/dto/UserResponseClientDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/service/client/GetUserDetailClientFallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/service/client/GetUserDetailsClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/dto/SalonResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/dto/UserResponseClientDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/service/client/GetUserDetailClientFallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/service/client/GetUserDetailsClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/dto/CategoryResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/dto/SalonResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/dto/ServiceIdsDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/dto/UserResponseClientDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/client/CategoryClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/client/GetSalonDetailClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/client/GetSalonDetailClientFallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/client/GetUserDetailClientFallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/client/GetUserDetailsClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/clientDto/UserResponseClientDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/clientDto/UserResponseClientDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/enums/RoleEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/BookingServiceServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/BookingServiceServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/config/CustomErrorDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/config/CustomErrorDecoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/config/FeignConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/config/FeignConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/clientDto/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/clientDto/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/clientDto/UserRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/dto/clientDto/UserRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/exceptionHandling/FeignCustomException.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/exceptionHandling/FeignCustomException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/exceptionHandling/GlobalExceptionErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/exceptionHandling/GlobalExceptionErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/client/CreateUserProfileClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/client/CreateUserProfileClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/service/impl/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/utils/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/config/CustomErrorDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/config/CustomErrorDecoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/config/FeignConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/config/FeignConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/config/JwtAuthConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/config/JwtAuthConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/controller/BookingServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/controller/BookingServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/BookingServiceDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/BookingServiceDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/CategoruDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/SalonDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/ServiceOfferDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/BookingServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/BookingServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/impl/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/impl/BookingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/serviceHelper/BookingServiceHelperFn.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/serviceHelper/BookingServiceHelperFn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/CategoryServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/CategoryServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/config/JwtAuthConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/config/JwtAuthConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/BookingDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/BookingDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/PaymentLinkResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/PaymentLinkResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/dto/PaymentMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/globalExceptionHandler/FeignCustomException.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/globalExceptionHandler/FeignCustomException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/globalExceptionHandler/GlobalExceptionErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/globalExceptionHandler/GlobalExceptionErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/GetPaymentDetailClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/GetPaymentDetailClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/GetSalonDetailClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/GetSalonDetailClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/GetSalonDetailClientFallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/GetSalonDetailClientFallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/GetUserDetailsClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/GetUserDetailsClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/ServiceOfferingClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/ServiceOfferingClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/ServiceOfferingClientFallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/service/client/ServiceOfferingClientFallBack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/dto/CategoryResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/dto/CategoryResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/globalHandleException/CustomException.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/globalHandleException/CustomException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/globalHandleException/GlobalErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/globalHandleException/GlobalErrorException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/PaymentServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/PaymentServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/config/JwtAuthConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/config/JwtAuthConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-server/src/main/java/com/category/server/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-micro-service/src/main/java/com/gateway_micro/service/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-micro-service/src/main/java/com/gateway_micro/service/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-micro-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-micro-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/globalExceptionHandler/GlobalExceptionErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/globalExceptionHandler/GlobalExceptionErrorHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/service/impl/PaymentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/service/impl/PaymentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-micro-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/salon-micro-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/SalonMicroServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/SalonMicroServerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/config/JwtAuthConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/config/JwtAuthConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/controller/SalonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/controller/SalonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/repository/SalonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/repository/SalonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/service/SalonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/service/SalonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/service/salonImpl/SalonServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon-micro-server/src/main/java/com/salon_micro_server/service/salonImpl/SalonServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/ServiceOfferingServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/ServiceOfferingServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/config/JwtAuthConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/config/JwtAuthConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/config/CustomErrorDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/config/CustomErrorDecoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/config/FeignConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/config/FeignConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/controller/ServiceOfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/controller/ServiceOfferController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/controller/ServiceOfferingSalonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/controller/ServiceOfferingSalonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/dto/CategoryDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/dto/SalonDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/dto/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/globalExceptionHandler/CustomException.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/globalExceptionHandler/CustomException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/repository/ServiceOfferingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/repository/ServiceOfferingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/ServiceOfferingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/ServiceOfferingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/impl/ServiceOfferingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/impl/ServiceOfferingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/config/JwtAuthConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/config/JwtAuthConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/dto/UserResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/dto/UserResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/dto/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/dto/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/globalExceptionHandler/FeignCustomException.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/globalExceptionHandler/FeignCustomException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/globalExceptionHandler/GlobalExceptionErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/globalExceptionHandler/GlobalExceptionErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/client/CategoryClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/client/CategoryClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/client/GetSalonDetailClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/client/GetSalonDetailClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/client/GetUserDetailsClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/service/client/GetUserDetailsClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/service/impl/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/service/impl/UserImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,8 +71,8 @@
       <list>
         <option value="Enum" />
         <option value="Exception" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -125,30 +97,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.AuthServerApplication.executor": "Run",
-    "Spring Boot.BookingServiceServerApplication.executor": "Run",
-    "Spring Boot.CategoryServerApplication.executor": "Run",
-    "Spring Boot.EurekaServerApplication.executor": "Run",
-    "Spring Boot.GatewayMicroServiceApplication.executor": "Run",
-    "Spring Boot.PaymentServerApplication.executor": "Run",
-    "Spring Boot.SalonMicroServerApplication.executor": "Run",
-    "Spring Boot.SalonServerApplication.executor": "Run",
-    "Spring Boot.ServiceOfferingServerApplication (1).executor": "Run",
-    "Spring Boot.ServiceOfferingServerApplication.executor": "Run",
-    "Spring Boot.UsersMicroServerApplication.executor": "Run",
-    "git-widget-placeholder": "salon/create-feature",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Sanjeev Kushwaha/OneDrive/Desktop/learningJava/microservices-salon-server/payment-server/src/main/java/com/payment/server/service",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AuthServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.BookingServiceServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.CategoryServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayMicroServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PaymentServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.SalonMicroServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.SalonServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceOfferingServerApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceOfferingServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UsersMicroServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;salon/create-feature&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sanjeev Kushwaha/OneDrive/Desktop/learningJava/microservices-salon-server/payment-server/src/main/java/com/payment/server/service&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sanjeev Kushwaha\OneDrive\Desktop\learningJava\microservices-salon-server\payment-server\src\main\java\com\payment\server\service" />
@@ -163,14 +135,14 @@
       <recent name="C:\Users\Sanjeev Kushwaha\OneDrive\Desktop\learningJava\microservices-salon-server\users-micro-server\src\main\resources\migration" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.payment.server.dto" />
       <recent name="com.booking.booking.server.dto" />
-      <recent name="com.booking.booking.server.service.client" />
+      <recent name="com.service_offering.server.config" />
       <recent name="com.service_offering.server.dto" />
-      <recent name="com.category.server.dto" />
+      <recent name="com.auth.server.exceptionHandling" />
+      <recent name="com.auth.server.dto.clientDto" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.PaymentServerApplication">
+  <component name="RunManager" selected="Spring Boot.BookingServiceServerApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="microservices-salon-server" />
       <method v="2">
@@ -200,13 +172,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="AuthServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="BookingServiceServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="auth-server" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.auth.server.AuthServerApplication" />
+      <module name="booking-service-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.booking.booking.server.BookingServiceServerApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.auth.server.*" />
+          <option name="PATTERN" value="com.booking.booking.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -214,13 +186,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="eureka-server" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.eureka.server.EurekaServerApplication" />
+      <module name="category-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.category.server.CategoryServerApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eureka.server.*" />
+          <option name="PATTERN" value="com.category.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -228,13 +200,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GatewayMicroServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="SalonMicroServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="gateway-micro-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gateway_micro.service.GatewayMicroServiceApplication" />
+      <module name="salon-micro-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.salon_micro_server.SalonMicroServerApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.gateway_micro.service.*" />
+          <option name="PATTERN" value="com.salon_micro_server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -242,13 +214,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="ServiceOfferingServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="payment-server" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.payment.server.PaymentServerApplication" />
+      <module name="service-offering-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.service_offering.server.ServiceOfferingServerApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.payment.server.*" />
+          <option name="PATTERN" value="com.service_offering.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -272,11 +244,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.PaymentServerApplication" />
+        <item itemvalue="Spring Boot.BookingServiceServerApplication" />
+        <item itemvalue="Spring Boot.ServiceOfferingServerApplication" />
+        <item itemvalue="Spring Boot.CategoryServerApplication" />
+        <item itemvalue="Spring Boot.SalonMicroServerApplication" />
         <item itemvalue="Spring Boot.UsersMicroServerApplication" />
-        <item itemvalue="Spring Boot.AuthServerApplication" />
-        <item itemvalue="Spring Boot.GatewayMicroServiceApplication" />
-        <item itemvalue="Spring Boot.EurekaServerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -322,12 +294,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/utils/JwtUtils.java</url>
-          <line>86</line>
+          <line>85</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/auth-server/src/main/java/com/auth/server/utils/JwtUtils.java</url>
-          <line>90</line>
+          <line>89</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
@@ -340,17 +312,8 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/booking-service-server/src/main/java/com/booking/booking/server/config/ModelMapperFn.java</url>
-          <line>9</line>
-          <properties class="com.booking.booking.server.config.ModelMapperFn" method="modelMapper">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/users-micro-server/src/main/java/com/users_micro_server/service/impl/UserImpl.java</url>
-          <line>65</line>
+          <line>66</line>
           <properties class="com.users_micro_server.service.impl.UserImpl" method="getAllUserList">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -365,6 +328,24 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/service-offering-server/src/main/java/com/service_offering/server/config/SecurityConfig.java</url>
+          <line>30</line>
+          <properties class="com.service_offering.server.config.SecurityConfig" method="SecurityFilterChain">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/payment-server/src/main/java/com/payment/server/service/impl/PaymentServiceImpl.java</url>
+          <line>80</line>
+          <properties class="com.payment.server.service.impl.PaymentServiceImpl" method="createRazorpayPaymentLink">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

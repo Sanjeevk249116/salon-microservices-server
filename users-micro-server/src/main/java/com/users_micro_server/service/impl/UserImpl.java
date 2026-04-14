@@ -53,6 +53,7 @@ public class UserImpl implements UserService {
 
         Role role = roleRepository.findByRoleName(RoleEnum.ROLE_USER).orElseThrow(() -> new IllegalArgumentException("role not found"));
         User user = modelMapper.map(newUser, User.class);
+        user.setId(newUser.getId());
         user.setRole(Set.of(role));
         User createdNew = userRepository.save(user);
         Set<String> roles = createdNew.getRole().stream().map(items -> items.getRoleName().name()).collect(Collectors.toSet());

@@ -23,7 +23,7 @@ public class GlobalExceptionErrorHandler {
         Map<String, Object> error = new HashMap<>();
         error.put("errorMessage", "Request url is not found");
         error.put("path", ex.getRequestURL());
-        error.put("statusCode", ex.getStatusCode());
+        error.put("statusCode", 404);
         error.put("status", false);
         logger.error("Error from global NoHandlerFoundException " + ex);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
@@ -52,7 +52,7 @@ public class GlobalExceptionErrorHandler {
         Map<String, Object> error = new HashMap<>();
         error.put("errorMessage", "Request url is not found");
         error.put("notFoundMethod", ex.getMethod());
-        error.put("statusCode", ex.getStatusCode());
+        error.put("statusCode", 404);
         error.put("status", false);
         logger.error("Error from global HttpRequestMethodNotSupportedException " + ex);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
@@ -73,6 +73,18 @@ public class GlobalExceptionErrorHandler {
 
         Map<String, Object> response = new HashMap<>();
         response.put("statusCode", 404);
+        response.put("status", false);
+        response.put("message", ex.getMessage());
+        response.put("data", null);
+
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(FeignCustomException.class)
+    public ResponseEntity<Map<String, Object>> handleFiegnException(FeignCustomException ex) {
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("statusCode", ex.getStatusCode());
         response.put("status", false);
         response.put("message", ex.getMessage());
         response.put("data", null);

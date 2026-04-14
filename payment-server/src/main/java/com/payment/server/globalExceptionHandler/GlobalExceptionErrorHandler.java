@@ -21,9 +21,9 @@ public class GlobalExceptionErrorHandler {
     @ExceptionHandler(NoHandlerFoundException.class)
     public ResponseEntity<Map<String, Object>> handleNotFound(NoHandlerFoundException ex) {
         Map<String, Object> error = new HashMap<>();
-        error.put("errorMessage", "Request url is not found");
+        error.put("message", "Request url is not found");
         error.put("path", ex.getRequestURL());
-        error.put("statusCode", ex.getStatusCode());
+        error.put("statusCode", 404);
         error.put("status", false);
         logger.error("Error from global NoHandlerFoundException " + ex);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
@@ -52,7 +52,7 @@ public class GlobalExceptionErrorHandler {
         Map<String, Object> error = new HashMap<>();
         error.put("errorMessage", "Request url is not found");
         error.put("notFoundMethod", ex.getMethod());
-        error.put("statusCode", ex.getStatusCode());
+        error.put("statusCode",404);
         error.put("status", false);
         logger.error("Error from global HttpRequestMethodNotSupportedException " + ex);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
@@ -61,8 +61,8 @@ public class GlobalExceptionErrorHandler {
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Map<String, Object>> IllegalArgumentException(IllegalArgumentException ex) {
         Map<String, Object> error = new HashMap<>();
-        error.put("errorMessage", ex.getMessage());
-        error.put("statusCode", HttpStatus.NOT_FOUND);
+        error.put("message", ex.getMessage());
+        error.put("statusCode", 404);
         error.put("status", false);
         logger.error("Error from global IllegalArgumentException " + ex);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);

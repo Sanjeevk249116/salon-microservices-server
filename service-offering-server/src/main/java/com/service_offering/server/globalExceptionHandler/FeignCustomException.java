@@ -1,4 +1,4 @@
-package com.auth.server.exceptionHandling;
+package com.service_offering.server.globalExceptionHandler;
 
 public class FeignCustomException extends RuntimeException {
     private final int statusCode;

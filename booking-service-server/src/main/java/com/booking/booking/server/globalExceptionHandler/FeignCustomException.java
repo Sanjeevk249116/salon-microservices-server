@@ -1,7 +1,14 @@
 package com.booking.booking.server.globalExceptionHandler;
 
 public class FeignCustomException extends RuntimeException {
-  public FeignCustomException(String message) {
-    super(message);
-  }
+    private final int statusCode;
+
+    public FeignCustomException(String message, int statusCode) {
+        super(message);
+        this.statusCode = statusCode;
+    }
+
+    public int getStatusCode() {
+        return statusCode;
+    }
 }

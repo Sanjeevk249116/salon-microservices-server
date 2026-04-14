@@ -42,7 +42,7 @@ spring:
         - id: SERVICE-OFFERING-SERVER
           uri: lb://SERVICE-OFFERING-SERVER
           predicates:
-            - Path=/api/service-offer/**, /api/service-offering/**
+            - Path=/api/service-offer/**, /api/owner/service-offering/**
 
 server:
   port: 5000

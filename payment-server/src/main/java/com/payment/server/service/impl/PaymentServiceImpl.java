@@ -19,6 +19,7 @@ import org.modelmapper.ModelMapper;
 import com.stripe.param.checkout.SessionCreateParams;
 import com.stripe.model.checkout.Session;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
@@ -31,6 +32,7 @@ public class PaymentServiceImpl implements PaymentService {
 
 
     @Override
+    @Transactional
     public PaymentLinkResponse createOrderAndGenerateNewPayment(UserResponseClientDto user, BookingDto booking, PaymentMethod paymentMethod) {
 
         Long amount = (long) booking.getTotalPrice();

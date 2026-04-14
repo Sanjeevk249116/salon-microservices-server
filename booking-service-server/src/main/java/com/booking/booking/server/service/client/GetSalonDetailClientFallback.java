@@ -12,7 +12,7 @@ import java.util.List;
 public class GetSalonDetailClientFallback implements GetSalonDetailClient{
 
     @Override
-    public ResponseEntity<SalonResponseDto> readSingleSalon(Long salonId) {
+    public ResponseEntity<SalonResponseDto> readSingleSalon(Long salonId, String authHeader) {
         return null;
     }
 }

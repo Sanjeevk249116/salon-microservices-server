@@ -34,7 +34,7 @@ public class ServiceOfferController {
         return ResponseEntity.ok(readAllServiceBySalon);
     }
 
-    @GetMapping("/read/all-service-by-ids")
+    @PostMapping("/read/all-service-by-ids")
     public ResponseEntity<Set<ServiceOfferingResponseDto>> readAllServiceOfferByIds(@RequestBody Set<Long> ids) {
         Set<ServiceOfferingResponseDto> serviceOfferingResponseDtos=serviceOfferingService.readAllServiceOfferByIds(ids);
         return ResponseEntity.ok(serviceOfferingResponseDtos);

@@ -48,7 +48,7 @@ public class SecurityConfig {
                             response.setStatus(401);
                             response.setContentType("application/json;charset=UTF-8");
                             Map<String, Object> map = new HashMap<>();
-                            map.put("code", 401);
+                            map.put("statusCode", 401);
                             map.put("message", "Authentication required. Please provide a valid token.");
                             objectMapper.writeValue(response.getWriter(), map);
                         })
@@ -57,7 +57,7 @@ public class SecurityConfig {
                             response.setStatus(401);
                             response.setContentType("application/json;charset=UTF-8");
                             Map<String, Object> map = new HashMap<>();
-                            map.put("code", 401);
+                            map.put("statusCode", 401);
                             map.put("message", "Access Denied. You are not authorized to access this resource.");
                             objectMapper.writeValue(response.getWriter(), map);
                         })

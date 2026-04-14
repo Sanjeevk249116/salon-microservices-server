@@ -4,6 +4,7 @@ import com.booking.booking.server.domain.BookingStatus;
 import com.booking.booking.server.dto.*;
 import com.booking.booking.server.entity.BookingService;
 import com.booking.booking.server.service.BookingServices;
+import com.booking.booking.server.service.client.GetPaymentDetailClient;
 import com.booking.booking.server.service.client.GetSalonDetailClient;
 import com.booking.booking.server.service.client.ServiceOfferingClient;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -26,16 +28,35 @@ public class BookingServiceController {
     private final BookingServices bookingService;
     private final GetSalonDetailClient getSalonDetailClient;
     private final ServiceOfferingClient serviceOfferingClient;
+    private final GetPaymentDetailClient getPaymentDetailClient;
 
     @PostMapping("/create-new/{salonId}")
-    public ResponseEntity<BookingService> createNewServiceBooking(@PathVariable Long salonId, @RequestBody BookingServiceDto newBookingServiceData, @AuthenticationPrincipal Jwt jwt) {
+    @Transactional
+    public ResponseEntity<PaymentLinkResponse> createNewServiceBooking(@PathVariable Long salonId,
+                                                                  @RequestBody BookingServiceDto newBookingServiceData,
+                                                                  @RequestParam PaymentMethod paymentMethod,
+                                                                  @AuthenticationPrincipal Jwt jwt) {
 
-        SalonResponseDto salonResponseDto=getSalonDetailClient.readSingleSalon(salonId).getBody();
+        SalonResponseDto salonResponseDto = getSalonDetailClient.readSingleSalon(salonId,
+                "Bearer " + jwt.getTokenValue()).getBody();
 
-        Set<ServiceOfferingResponseDto> serviceOfferingResponseDtos=serviceOfferingClient.readAllServiceOfferByIds(newBookingServiceData.getServicesIds()).getBody();
+        Set<ServiceOfferingResponseDto> serviceOfferingResponseDtos =
+                serviceOfferingClient.readAllServiceOfferByIds(newBookingServiceData.getServicesIds(),
+                        "Bearer " + jwt.getTokenValue()).getBody();
 
-        BookingService createdService = bookingService.createNewBookingService(newBookingServiceData, jwt.getClaim("userId"), salonResponseDto, serviceOfferingResponseDtos);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdService);
+        BookingService createdService = bookingService
+                .createNewBookingService(newBookingServiceData, jwt.getClaim("userId"),
+                        salonResponseDto,
+                        serviceOfferingResponseDtos);
+
+        BookingDto bookingDto = new BookingDto();
+        bookingDto.setId(createdService.getId());
+        bookingDto.setSalonId(createdService.getSalonId());
+        bookingDto.setTotalPrice(createdService.getTotalPrice());
+
+        PaymentLinkResponse res = getPaymentDetailClient.createOrderAndGetPaymentLink(bookingDto, paymentMethod, "Bearer " + jwt.getTokenValue()).getBody();
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(res);
     }
 
     @GetMapping("/owner/read/list-customer")

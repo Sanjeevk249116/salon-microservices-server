@@ -44,7 +44,7 @@ public class ServiceOfferingSalonController {
             throw new CustomException("You are not allowed to create a new category for this salon", 400);
         }
 
-        CategoryResponseDto categoryResponseDto = categoryClient.readSingleCategory(categoryId).getBody();
+        CategoryResponseDto categoryResponseDto = categoryClient.readSingleCategory(categoryId,"Bearer "+jwt.getTokenValue()).getBody();
 
         assert categoryResponseDto != null;
         if (!categoryResponseDto.getSalonId().equals(salonId)) {

@@ -63,6 +63,7 @@ public class AuthServiceImpl implements AuthService {
         newUserRequestDto.setPhone(savedUser.getPhoneNumber());
         newUserRequestDto.setUserName(registerRequest.getUserName());
         newUserRequestDto.setFullName(fullName);
+        newUserRequestDto.setId(newUser.getId());
 
         createUserProfileClient.createUserProfile(newUserRequestDto, bearerToken);
 

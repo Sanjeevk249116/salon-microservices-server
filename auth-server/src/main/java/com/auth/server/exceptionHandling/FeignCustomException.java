@@ -1,4 +1,4 @@
-package com.booking.booking.server.globalExceptionHandler;
+package com.auth.server.exceptionHandling;
 
 public class FeignCustomException extends RuntimeException {
     private final int statusCode;

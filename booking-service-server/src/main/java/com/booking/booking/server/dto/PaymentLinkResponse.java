@@ -1,4 +1,4 @@
-package com.payment.server.payloadResponseStructure;
+package com.booking.booking.server.dto;
 
 import lombok.Data;
 

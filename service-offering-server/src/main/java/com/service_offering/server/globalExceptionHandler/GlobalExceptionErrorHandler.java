@@ -23,7 +23,7 @@ public class GlobalExceptionErrorHandler {
         Map<String, Object> error = new HashMap<>();
         error.put("errorMessage", "Request url is not found");
         error.put("path", ex.getRequestURL());
-        error.put("statusCode", ex.getStatusCode());
+        error.put("statusCode", 404);
         error.put("status", false);
         logger.error("Error from global NoHandlerFoundException " + ex);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
@@ -50,9 +50,9 @@ public class GlobalExceptionErrorHandler {
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<Map<String, Object>> HttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException ex) {
         Map<String, Object> error = new HashMap<>();
-        error.put("errorMessage", "Request url is not found");
+        error.put("message", "Request url is not found");
         error.put("notFoundMethod", ex.getMethod());
-        error.put("statusCode", ex.getStatusCode());
+        error.put("statusCode", 404);
         error.put("status", false);
         logger.error("Error from global HttpRequestMethodNotSupportedException " + ex);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
@@ -62,7 +62,7 @@ public class GlobalExceptionErrorHandler {
     public ResponseEntity<Map<String, Object>> IllegalArgumentException(IllegalArgumentException ex) {
         Map<String, Object> error = new HashMap<>();
         error.put("errorMessage", ex.getMessage());
-        error.put("statusCode", HttpStatus.NOT_FOUND);
+        error.put("statusCode", 404);
         error.put("status", false);
         logger.error("Error from global IllegalArgumentException " + ex);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
@@ -100,5 +100,17 @@ public class GlobalExceptionErrorHandler {
         response.put("data", null);
 
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(FeignCustomException.class)
+    public ResponseEntity<Map<String, Object>> handleFiegnException(FeignCustomException ex) {
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("statusCode", ex.getStatusCode());
+        response.put("status", false);
+        response.put("message", ex.getMessage());
+        response.put("data", null);
+
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 }

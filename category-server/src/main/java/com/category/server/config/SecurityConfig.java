@@ -73,7 +73,8 @@ public class SecurityConfig {
                             }
 
                             response.setStatus(statusCode);
-                            map.put("code", statusCode);
+                            map.put("statusCode", statusCode);
+                            map.put("status",false);
                             map.put("error", errorCode);
                             map.put("message", errorMessage);
                             map.put("timestamp", System.currentTimeMillis());
@@ -87,7 +88,8 @@ public class SecurityConfig {
                             response.setStatus(401);
                             response.setContentType("application/json;charset=UTF-8");
                             Map<String, Object> map = new HashMap<>();
-                            map.put("code", 401);
+                            map.put("statusCode", 401);
+                            map.put("status",false);
                             map.put("error", "UNAUTHORIZED");
                             map.put("message", "Authentication required. Please provide a valid token.");
                             map.put("timestamp", System.currentTimeMillis());
@@ -98,7 +100,7 @@ public class SecurityConfig {
                             response.setStatus(403);
                             response.setContentType("application/json;charset=UTF-8");
                             Map<String, Object> map = new HashMap<>();
-                            map.put("code", 403);
+                            map.put("statusCode", 403);
                             map.put("error", "ACCESS_DENIED");
                             map.put("message", "Access Denied. You are not authorized to access this resource.");
                             map.put("timestamp", System.currentTimeMillis());

@@ -91,4 +91,16 @@ public class GlobalExceptionErrorHandler {
 
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @ExceptionHandler(FeignCustomException.class)
+    public ResponseEntity<Map<String, Object>> handleFiegnException(FeignCustomException ex) {
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("statusCode", ex.getStatusCode());
+        response.put("status", false);
+        response.put("message", ex.getMessage());
+        response.put("data", null);
+
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
 }

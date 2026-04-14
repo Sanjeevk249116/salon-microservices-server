@@ -18,7 +18,6 @@ import java.util.Set;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String fullName;
     private String email;

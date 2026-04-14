@@ -25,7 +25,7 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
     @Override
     public AbstractAuthenticationToken convert(Jwt source) {
 
-        UserResponseClientDto user=getUserDetailsClient.getUserProfile(source.getTokenValue()).getBody();
+        UserResponseClientDto user=getUserDetailsClient.getUserProfile("Bearer "+source.getTokenValue()).getBody();
 
         assert user != null;
         Object roleBase = user.getRole();

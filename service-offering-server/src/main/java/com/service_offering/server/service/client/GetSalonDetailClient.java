@@ -2,6 +2,7 @@ package com.service_offering.server.service.client;
 
 
 
+import com.service_offering.server.config.FeignConfig;
 import com.service_offering.server.dto.SalonResponseDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.List;
 
-@FeignClient(name = "SALON-MICRO-SERVER", path = "/api/salon",fallback = GetSalonDetailClientFallback.class)
+@FeignClient(name = "SALON-MICRO-SERVER", path = "/api/salon",fallback = GetSalonDetailClientFallback.class,configuration = FeignConfig.class)
 public interface GetSalonDetailClient {
 
     @GetMapping("/owner/read/my-salon")

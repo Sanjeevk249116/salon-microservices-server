@@ -50,7 +50,6 @@ public class JwtUtils {
 
     public String generateAccessToken(UserDetails userDetails, Long userId) {
         Map<String, Object> claims = new HashMap<>();
-
         Set<String> roles = userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toSet());
         claims.put("roles", roles);
         claims.put("userId", userId);
@@ -58,7 +57,7 @@ public class JwtUtils {
 
     }
 
-    public String generateRefreshToken(UserAuth user,Long refreshTokenExpiration) {
+    public String generateRefreshToken(UserAuth user, Long refreshTokenExpiration) {
         return Jwts.builder()
                 .subject(user.getEmail())
                 .issuedAt(new Date(System.currentTimeMillis()))
@@ -88,7 +87,7 @@ public class JwtUtils {
     }
 
     private Date extractExpiredTime(String token) {
-        return extractClaims(token,Claims::getExpiration);
+        return extractClaims(token, Claims::getExpiration);
     }
 
     private SecretKey getSignatureKey() {

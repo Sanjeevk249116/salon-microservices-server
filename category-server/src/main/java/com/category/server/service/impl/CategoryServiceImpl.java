@@ -39,17 +39,17 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryResponseDto readSingleCategory(Long categoryId) {
-        Category singleCategory = categoryRepository.findById(categoryId).orElseThrow(() -> new CustomException("Category not found"));
+        Category singleCategory = categoryRepository.findById(categoryId).orElseThrow(() -> new CustomException("Category not found",400));
 
         return modelMapper.map(singleCategory, CategoryResponseDto.class);
     }
 
     @Override
     public CategoryResponseDto updateCategory(CategoryRequestDto newCategoryData, Long categoryId, Long id) {
-        Category singleCategory = categoryRepository.findById(categoryId).orElseThrow(() -> new CustomException("Category not found"));
+        Category singleCategory = categoryRepository.findById(categoryId).orElseThrow(() -> new CustomException("Category not found",400));
 
         if (!singleCategory.getSalonId().equals(id)) {
-            throw new CustomException("You are not allow to update this task");
+            throw new CustomException("You are not allow to update this task",400);
         }
 
         if (newCategoryData.getCategoryImage() != null) {
