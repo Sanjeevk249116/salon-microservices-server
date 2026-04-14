@@ -26,7 +26,6 @@ public class CustomErrorDecoder implements ErrorDecoder {
             );
 
         } catch (Exception e) {
-            System.out.println("<<<<<<<<<<<<<<>>>>>>>>>>>>>>>" + e);
             return new RuntimeException("Unknown error occurred");
         }
     }

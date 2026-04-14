@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/category-server/pom.xml" />
         <option value="$PROJECT_DIR$/booking-service-server/pom.xml" />
         <option value="$PROJECT_DIR$/salon-micro-server/pom.xml" />
+        <option value="$PROJECT_DIR$/notification-server/pom.xml" />
       </list>
     </option>
   </component>
